@@ -1,2553 +1,1965 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Car Wings | El Único Sabor — Alitas en Quillacollo</title>
-    <meta name="description" content="Car Wings — Restaurante de alitas en Quillacollo, Bolivia. Sabores Barbacoa, Miel y Mostaza y Picante. Pide por WhatsApp. El Único Sabor.">
-    <meta name="theme-color" content="#0B0B0D">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Car Wings | El Único Sabor">
-    <meta property="og:description" content="Alitas Barbacoa, Miel y Mostaza y Picante. Pide ya por WhatsApp — Quillacollo, Bolivia.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://i.imgur.com/tzRZQLo.jpeg">
-    <meta property="og:locale" content="es_BO">
-
-    <link rel="icon" type="image/jpeg" href="https://i.imgur.com/tzRZQLo.jpeg">
-    <link rel="apple-touch-icon" href="https://i.imgur.com/tzRZQLo.jpeg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-    <style>
-             /* ==========================================================================
-        CAR WINGS — Design System
-        Style: Elegant Dark + Racing accents (checkered flag motif)
-        Fonts: Bebas Neue (display) + Barlow (body)
-        ========================================================================== */
-
-             :root {
-                 /* Color tokens */
-                 --color-bg: #0a0a0c;
-                 --color-bg-alt: #121215;
-                 --color-surface: #18181c;
-                 --color-surface-2: #202024;
-                 --color-border: #2a2a30;
-                 --color-primary: #d01f2b;
-                 --color-primary-dark: #8f141d;
-                 --color-primary-light: #ff4757;
-                 --color-gold: #d4af37;
-                 --color-gold-light: #ecd27a;
-                 --color-bbq: #a9542c;
-                 --color-bbq-light: #c97a4d;
-                 --color-text: #f5f5f2;
-                 --color-text-muted: #a6a6ae;
-                 --color-text-faint: #6f6f78;
-                 --color-whatsapp: #25d366;
-                 --color-whatsapp-dark: #1da851;
-                 --color-ring: #ff4757;
-                 /* Typography */
-                 --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
-                 --font-body: 'Barlow', 'Segoe UI', sans-serif;
-                 /* Spacing scale */
-                 --space-1: 4px;
-                 --space-2: 8px;
-                 --space-3: 12px;
-                 --space-4: 16px;
-                 --space-5: 24px;
-                 --space-6: 32px;
-                 --space-7: 48px;
-                 --space-8: 64px;
-                 --space-9: 96px;
-                 /* Radius */
-                 --radius-sm: 8px;
-                 --radius-md: 14px;
-                 --radius-lg: 22px;
-                 --radius-pill: 999px;
-                 /* Shadows */
-                 --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
-                 --shadow-md: 0 8px 30px rgba(0,0,0,.45);
-                 --shadow-glow-red: 0 0 0 1px rgba(255,71,87,.25), 0 12px 40px rgba(208,31,43,.28);
-                 --shadow-glow-gold: 0 0 0 1px rgba(212,175,55,.3), 0 12px 30px rgba(212,175,55,.15);
-                 --transition-fast: 160ms ease;
-                 --transition-base: 240ms cubic-bezier(.4,0,.2,1);
-                 --header-h: 76px;
-             }
-
-             /* ================= RESET ================= */
-             *, *::before, *::after {
-                 box-sizing: border-box;
-             }
-
-             html {
-                 scroll-behavior: smooth;
-                 scroll-padding-top: var(--header-h);
-             }
-
-             @media (prefers-reduced-motion: reduce) {
-                 html {
-                     scroll-behavior: auto;
-                 }
-
-                 *, *::before, *::after {
-                     animation-duration: 0.01ms !important;
-                     animation-iteration-count: 1 !important;
-                     transition-duration: 0.01ms !important;
-                 }
-             }
-
-             body, h1, h2, h3, p, ul, figure {
-                 margin: 0;
-             }
-
-             ul {
-                 padding: 0;
-                 list-style: none;
-             }
-
-             img {
-                 max-width: 100%;
-                 display: block;
-             }
-
-             a {
-                 color: inherit;
-                 text-decoration: none;
-             }
-
-             button {
-                 font: inherit;
-                 color: inherit;
-                 background: none;
-                 border: none;
-                 cursor: pointer;
-             }
-
-             input, select {
-                 font: inherit;
-             }
-
-             body {
-                 background: var(--color-bg);
-                 color: var(--color-text);
-                 font-family: var(--font-body);
-                 font-size: 16px;
-                 line-height: 1.6;
-                 -webkit-font-smoothing: antialiased;
-                 overflow-x: hidden;
-             }
-
-             .container {
-                 width: 100%;
-                 max-width: 1180px;
-                 margin-inline: auto;
-                 padding-inline: var(--space-5);
-             }
-
-             :focus-visible {
-                 outline: 2px solid var(--color-ring);
-                 outline-offset: 3px;
-                 border-radius: 4px;
-             }
-
-             .skip-link {
-                 position: absolute;
-                 left: -999px;
-                 top: 0;
-                 background: var(--color-primary);
-                 color: #fff;
-                 padding: var(--space-3) var(--space-4);
-                 z-index: 999;
-                 border-radius: 0 0 var(--radius-sm) 0;
-             }
-
-                 .skip-link:focus {
-                     left: 0;
-                 }
-
-             /* ================= TYPOGRAPHY HELPERS ================= */
-             .eyebrow {
-                 font-family: var(--font-body);
-                 font-weight: 700;
-                 letter-spacing: .18em;
-                 text-transform: uppercase;
-                 font-size: 13px;
-                 color: var(--color-gold);
-                 margin-bottom: var(--space-3);
-             }
-
-             .eyebrow--center {
-                 text-align: center;
-             }
-
-             .section-title {
-                 font-family: var(--font-display);
-                 font-size: clamp(2.4rem, 6vw, 3.6rem);
-                 letter-spacing: .02em;
-                 line-height: 1.02;
-                 text-align: center;
-                 margin-bottom: var(--space-4);
-             }
-
-             .section-title--left {
-                 text-align: left;
-             }
-
-             .section-sub {
-                 text-align: center;
-                 color: var(--color-text-muted);
-                 max-width: 560px;
-                 margin-inline: auto;
-                 margin-bottom: var(--space-7);
-                 font-size: 1.05rem;
-             }
-
-             /* ================= BUTTONS ================= */
-             .btn {
-                 display: inline-flex;
-                 align-items: center;
-                 justify-content: center;
-                 gap: var(--space-2);
-                 min-height: 50px;
-                 padding: 0 var(--space-6);
-                 border-radius: var(--radius-pill);
-                 font-family: var(--font-body);
-                 font-weight: 700;
-                 font-size: 0.98rem;
-                 letter-spacing: .01em;
-                 cursor: pointer;
-                 transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
-                 white-space: nowrap;
-             }
-
-                 .btn .icon {
-                     width: 18px;
-                     height: 18px;
-                     flex-shrink: 0;
-                 }
-
-                 .btn:active {
-                     transform: scale(.97);
-                 }
-
-             .btn-primary {
-                 background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
-                 color: #fff;
-                 box-shadow: var(--shadow-glow-red);
-             }
-
-                 .btn-primary:hover {
-                     box-shadow: 0 0 0 1px rgba(255,71,87,.4), 0 16px 46px rgba(208,31,43,.4);
-                     transform: translateY(-2px);
-                 }
-
-             .btn-whatsapp {
-                 background: var(--color-whatsapp);
-                 color: #06210f;
-             }
-
-                 .btn-whatsapp:hover {
-                     background: var(--color-whatsapp-dark);
-                     transform: translateY(-2px);
-                     box-shadow: 0 10px 28px rgba(37,211,102,.35);
-                 }
-
-                 .btn-whatsapp svg path {
-                     fill: #06210f;
-                 }
-
-             .btn-outline {
-                 background: transparent;
-                 border: 1.5px solid var(--color-border);
-                 color: var(--color-text);
-             }
-
-                 .btn-outline:hover {
-                     border-color: var(--color-gold);
-                     color: var(--color-gold-light);
-                 }
-
-             .btn-ghost {
-                 background: transparent;
-                 color: var(--color-text-muted);
-                 border: 1.5px solid transparent;
-             }
-
-                 .btn-ghost:hover {
-                     color: var(--color-text);
-                     border-color: var(--color-border);
-                 }
-
-             .btn-small {
-                 min-height: 42px;
-                 padding: 0 var(--space-5);
-                 font-size: .88rem;
-             }
-
-             .btn-block {
-                 width: 100%;
-             }
-
-             /* ================= HEADER ================= */
-             .site-header {
-                 position: fixed;
-                 inset: 0 0 auto 0;
-                 height: var(--header-h);
-                 z-index: 100;
-                 display: flex;
-                 align-items: center;
-                 background: rgba(10,10,12,.7);
-                 backdrop-filter: blur(14px) saturate(140%);
-                 -webkit-backdrop-filter: blur(14px) saturate(140%);
-                 border-bottom: 1px solid rgba(255,255,255,.06);
-                 transition: background var(--transition-base), border-color var(--transition-base);
-             }
-
-                 .site-header.is-scrolled {
-                     background: rgba(10,10,12,.92);
-                     box-shadow: var(--shadow-sm);
-                 }
-
-             .nav-inner {
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-between;
-                 gap: var(--space-4);
-                 height: 100%;
-             }
-
-             .brand {
-                 display: inline-flex;
-                 align-items: center;
-                 gap: var(--space-2);
-             }
-
-             .brand-text {
-                 font-family: var(--font-display);
-                 font-size: 1.5rem;
-                 letter-spacing: .04em;
-             }
-
-                 .brand-text em {
-                     font-style: normal;
-                     color: var(--color-primary-light);
-                 }
-
-             .brand-text--footer {
-                 font-size: 1.8rem;
-             }
-
-             .brand-logo {
-                 width: 40px;
-                 height: 40px;
-                 border-radius: 50%;
-                 object-fit: cover;
-                 border: 2px solid var(--color-gold);
-                 box-shadow: 0 0 0 1px rgba(212,175,55,.2), 0 4px 14px rgba(0,0,0,.4);
-                 flex-shrink: 0;
-             }
-
-             .brand-logo--footer {
-                 width: 56px;
-                 height: 56px;
-             }
-
-             .footer-brand-head {
-                 display: flex;
-                 align-items: center;
-                 gap: var(--space-3);
-                 margin-bottom: var(--space-2);
-             }
-
-             .main-nav {
-                 display: flex;
-                 align-items: center;
-                 gap: var(--space-6);
-             }
-
-                 .main-nav ul {
-                     display: flex;
-                     gap: var(--space-5);
-                 }
-
-             .nav-link {
-                 position: relative;
-                 font-weight: 600;
-                 font-size: .95rem;
-                 color: var(--color-text-muted);
-                 padding: var(--space-2) 0;
-                 transition: color var(--transition-fast);
-             }
-
-                 .nav-link::after {
-                     content: '';
-                     position: absolute;
-                     left: 0;
-                     right: 0;
-                     bottom: -2px;
-                     height: 2px;
-                     background: var(--color-gold);
-                     transform: scaleX(0);
-                     transform-origin: left;
-                     transition: transform var(--transition-fast);
-                 }
-
-                 .nav-link:hover {
-                     color: var(--color-text);
-                 }
-
-                     .nav-link:hover::after,
-                     .nav-link.is-active::after {
-                         transform: scaleX(1);
-                     }
-
-                 .nav-link.is-active {
-                     color: var(--color-text);
-                 }
-
-             .nav-close {
-                 display: none;
-                 position: absolute;
-                 top: var(--space-5);
-                 right: var(--space-5);
-                 color: var(--color-text);
-             }
-
-             .nav-toggle {
-                 display: none;
-                 flex-direction: column;
-                 justify-content: center;
-                 gap: 5px;
-                 width: 44px;
-                 height: 44px;
-                 align-items: center;
-             }
-
-                 .nav-toggle span {
-                     width: 22px;
-                     height: 2px;
-                     background: var(--color-text);
-                     border-radius: 2px;
-                     transition: transform var(--transition-fast), opacity var(--transition-fast);
-                 }
-
-                 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-                     transform: translateY(7px) rotate(45deg);
-                 }
-
-                 .nav-toggle[aria-expanded="true"] span:nth-child(2) {
-                     opacity: 0;
-                 }
-
-                 .nav-toggle[aria-expanded="true"] span:nth-child(3) {
-                     transform: translateY(-7px) rotate(-45deg);
-                 }
-
-             .nav-backdrop {
-                 position: fixed;
-                 inset: 0;
-                 background: rgba(0,0,0,.6);
-                 backdrop-filter: blur(2px);
-                 z-index: 98;
-                 opacity: 0;
-                 pointer-events: none;
-                 transition: opacity var(--transition-base);
-             }
-
-                 .nav-backdrop.is-visible {
-                     opacity: 1;
-                     pointer-events: auto;
-                 }
-
-             /* ================= HERO ================= */
-             .hero {
-                 position: relative;
-                 min-height: 100vh;
-                 min-height: 100svh;
-                 display: flex;
-                 align-items: center;
-                 padding-top: var(--header-h);
-                 overflow: hidden;
-                 background: radial-gradient(ellipse 900px 500px at 80% -10%, rgba(208,31,43,.28), transparent 60%), radial-gradient(ellipse 700px 500px at 5% 110%, rgba(212,175,55,.14), transparent 60%), var(--color-bg);
-             }
-
-             .hero-glow {
-                 position: absolute;
-                 inset: 0;
-                 background: radial-gradient(circle at 50% 40%, rgba(255,71,87,.08), transparent 55%);
-                 pointer-events: none;
-             }
-
-             .hero-logo-bg {
-                 position: absolute;
-                 top: 50%;
-                 left: 50%;
-                 width: min(1100px, 130vw);
-                 height: min(1100px, 130vw);
-                 transform: translate(-50%, -50%);
-                 background-image: url('https://i.imgur.com/tzRZQLo.jpeg');
-                 background-size: cover;
-                 background-position: center;
-                 border-radius: 50%;
-                 opacity: .16;
-                 filter: blur(22px) saturate(115%);
-                 z-index: 0;
-                 pointer-events: none;
-             }
-
-             .hero-flag {
-                 position: absolute;
-                 left: 0;
-                 right: 0;
-                 height: 14px;
-                 background-image: repeating-conic-gradient(#e9e9ec 0 25%, #131316 0 50%);
-                 background-size: 22px 22px;
-                 opacity: .5;
-             }
-
-             .hero-flag--top {
-                 top: 0;
-             }
-
-             .hero-flag--bottom {
-                 bottom: 0;
-             }
-
-             .hero-inner {
-                 position: relative;
-                 z-index: 2;
-                 padding-block: var(--space-8);
-                 max-width: 760px;
-             }
-
-             .hero-title {
-                 font-family: var(--font-display);
-                 font-size: clamp(4rem, 15vw, 8.5rem);
-                 line-height: .85;
-                 letter-spacing: .01em;
-             }
-
-             .hero-title-line {
-                 display: block;
-             }
-
-             .hero-title-accent {
-                 background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark) 70%);
-                 -webkit-background-clip: text;
-                 background-clip: text;
-                 color: transparent;
-                 filter: drop-shadow(0 6px 26px rgba(208,31,43,.45));
-             }
-
-             .hero-slogan {
-                 font-family: var(--font-display);
-                 letter-spacing: .3em;
-                 color: var(--color-gold-light);
-                 font-size: 1rem;
-                 margin-top: var(--space-3);
-             }
-
-             .hero-wings-deco {
-                 display: flex;
-                 align-items: center;
-                 gap: var(--space-3);
-                 margin-top: var(--space-3);
-             }
-
-                 .hero-wings-deco .wing {
-                     width: 42px;
-                     height: auto;
-                     color: var(--color-gold);
-                     opacity: .92;
-                     flex-shrink: 0;
-                 }
-
-                 .hero-wings-deco .wing-right {
-                     transform: scaleX(-1);
-                 }
-
-             .hero-wings-slogan {
-                 font-family: var(--font-display);
-                 letter-spacing: .28em;
-                 color: var(--color-gold-light);
-                 font-size: .95rem;
-                 white-space: nowrap;
-             }
-
-             @media (max-width: 480px) {
-                 .hero-wings-deco .wing {
-                     width: 30px;
-                 }
-
-                 .hero-wings-slogan {
-                     font-size: .75rem;
-                     letter-spacing: .18em;
-                 }
-             }
-
-             .hero-desc {
-                 margin-top: var(--space-5);
-                 font-size: 1.15rem;
-                 color: var(--color-text-muted);
-                 max-width: 520px;
-             }
-
-                 .hero-desc strong {
-                     color: var(--color-text);
-                     font-weight: 700;
-                 }
-
-             .hero-actions {
-                 display: flex;
-                 flex-wrap: wrap;
-                 gap: var(--space-3);
-                 margin-top: var(--space-6);
-             }
-
-             .hero-meta {
-                 display: flex;
-                 flex-wrap: wrap;
-                 gap: var(--space-6);
-                 margin-top: var(--space-7);
-             }
-
-             .hero-meta-item {
-                 display: flex;
-                 align-items: center;
-                 gap: var(--space-2);
-                 color: var(--color-text-muted);
-                 font-size: .92rem;
-             }
-
-                 .hero-meta-item .icon {
-                     width: 18px;
-                     height: 18px;
-                     color: var(--color-gold);
-                     flex-shrink: 0;
-                 }
-
-             .scroll-cue {
-                 position: absolute;
-                 bottom: var(--space-6);
-                 left: 50%;
-                 transform: translateX(-50%);
-                 color: var(--color-text-faint);
-                 animation: bob 2.2s ease-in-out infinite;
-                 z-index: 2;
-             }
-
-             @keyframes bob {
-                 0%,100% {
-                     transform: translate(-50%,0);
-                 }
-
-                 50% {
-                     transform: translate(-50%,8px);
-                 }
-             }
-
-             @media (prefers-reduced-motion: reduce) {
-                 .scroll-cue {
-                     animation: none;
-                 }
-             }
-
-             /* ================= FLAVORS STRIP ================= */
-             .flavors {
-                 padding: var(--space-8) 0;
-                 background: var(--color-bg-alt);
-             }
-
-             .flavors-inner {
-                 display: grid;
-                 grid-template-columns: repeat(3, 1fr);
-                 gap: var(--space-5);
-             }
-
-             .flavor-card {
-                 background: var(--color-surface);
-                 border: 1px solid var(--color-border);
-                 border-radius: var(--radius-lg);
-                 padding: var(--space-6);
-                 transition: transform var(--transition-base), border-color var(--transition-base);
-             }
-
-                 .flavor-card:hover {
-                     transform: translateY(-4px);
-                     border-color: rgba(212,175,55,.4);
-                 }
-
-             .flavor-icon {
-                 width: 56px;
-                 height: 56px;
-                 border-radius: var(--radius-md);
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 margin-bottom: var(--space-4);
-             }
-
-                 .flavor-icon svg {
-                     width: 28px;
-                     height: 28px;
-                 }
-
-             .flavor-icon--bbq {
-                 background: rgba(169,84,44,.16);
-                 color: var(--color-bbq-light);
-             }
-
-             .flavor-icon--honey {
-                 background: rgba(236,210,122,.16);
-                 color: #f0d98c;
-             }
-
-             .flavor-icon--spicy {
-                 background: rgba(208,31,43,.16);
-                 color: var(--color-primary-light);
-             }
-
-             .flavor-card h3 {
-                 font-family: var(--font-display);
-                 font-size: 1.5rem;
-                 letter-spacing: .02em;
-                 margin-bottom: var(--space-2);
-             }
-
-             .flavor-card p {
-                 color: var(--color-text-muted);
-                 font-size: .96rem;
-             }
-
-             /* ================= MENU ================= */
-             .menu-section {
-                 padding: var(--space-9) 0;
-             }
-
-             .menu-grid {
-                 display: grid;
-                 grid-template-columns: repeat(4, 1fr);
-                 gap: var(--space-5);
-             }
-
-             .menu-card {
-                 position: relative;
-                 background: var(--color-surface);
-                 border: 1px solid var(--color-border);
-                 border-radius: var(--radius-lg);
-                 padding: var(--space-5);
-                 display: flex;
-                 flex-direction: column;
-                 gap: var(--space-3);
-                 transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
-             }
-
-                 .menu-card:hover {
-                     transform: translateY(-6px);
-                     border-color: rgba(255,71,87,.4);
-                     box-shadow: var(--shadow-md);
-                 }
-
-                 .menu-card.is-popular {
-                     border-color: var(--color-gold);
-                 }
-
-             .menu-card-badge {
-                 position: absolute;
-                 top: -12px;
-                 left: var(--space-4);
-                 background: var(--color-gold);
-                 color: #241b02;
-                 font-size: .72rem;
-                 font-weight: 800;
-                 letter-spacing: .06em;
-                 text-transform: uppercase;
-                 padding: 4px 12px;
-                 border-radius: var(--radius-pill);
-             }
-
-             .menu-card-icon {
-                 width: 46px;
-                 height: 46px;
-                 border-radius: var(--radius-sm);
-                 background: rgba(208,31,43,.15);
-                 color: var(--color-primary-light);
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-             }
-
-                 .menu-card-icon svg {
-                     width: 24px;
-                     height: 24px;
-                 }
-
-             .menu-card h3 {
-                 font-family: var(--font-display);
-                 font-size: 1.5rem;
-                 letter-spacing: .02em;
-                 margin-top: var(--space-1);
-             }
-
-             .menu-card p.menu-card-desc {
-                 color: var(--color-text-muted);
-                 font-size: .88rem;
-                 flex-grow: 1;
-             }
-
-             .menu-card-price {
-                 font-family: var(--font-display);
-                 font-size: 2rem;
-                 color: var(--color-gold-light);
-                 letter-spacing: .02em;
-             }
-
-                 .menu-card-price span {
-                     font-family: var(--font-body);
-                     font-size: .85rem;
-                     color: var(--color-text-muted);
-                     font-weight: 600;
-                 }
-
-             .menu-card-options {
-                 display: flex;
-                 flex-direction: column;
-                 padding-top: var(--space-2);
-                 border-top: 1px solid var(--color-border);
-             }
-
-             .field-label {
-                 font-size: .7rem;
-                 text-transform: uppercase;
-                 letter-spacing: .08em;
-                 color: var(--color-text-faint);
-                 font-weight: 700;
-                 display: block;
-                 margin-bottom: 6px;
-             }
-
-             .field-label--spaced {
-                 margin-top: 10px;
-             }
-
-             .flavor-select {
-                 width: 100%;
-                 background: var(--color-surface-2);
-                 border: 1.5px solid var(--color-border);
-                 border-radius: var(--radius-sm);
-                 padding: 11px 12px;
-                 color: var(--color-text);
-                 min-height: 44px;
-                 transition: border-color var(--transition-fast);
-             }
-
-                 .flavor-select.is-invalid {
-                     border-color: var(--color-primary-light);
-                 }
-
-             .sauce-mode {
-                 display: flex;
-                 gap: var(--space-2);
-             }
-
-             .check-pill {
-                 flex: 1;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 gap: 6px;
-                 border: 1.5px solid var(--color-border);
-                 border-radius: var(--radius-pill);
-                 padding: 8px 6px;
-                 font-size: .76rem;
-                 font-weight: 700;
-                 cursor: pointer;
-                 color: var(--color-text-muted);
-                 transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
-                 user-select: none;
-             }
-
-                 .check-pill input {
-                     position: absolute;
-                     opacity: 0;
-                     width: 0;
-                     height: 0;
-                 }
-
-                 .check-pill.is-active {
-                     border-color: var(--color-gold);
-                     color: var(--color-gold-light);
-                     background: rgba(212,175,55,.1);
-                 }
-
-             .qty-control {
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-between;
-                 background: var(--color-surface-2);
-                 border-radius: var(--radius-pill);
-                 padding: 4px;
-             }
-
-             .qty-btn {
-                 width: 38px;
-                 height: 38px;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 border-radius: 50%;
-                 background: var(--color-bg);
-                 color: var(--color-text);
-                 font-size: 1.2rem;
-                 font-weight: 700;
-                 transition: background var(--transition-fast);
-             }
-
-                 .qty-btn:hover {
-                     background: var(--color-primary);
-                 }
-
-             .qty-value {
-                 font-weight: 700;
-                 min-width: 24px;
-                 text-align: center;
-             }
-
-             .extras {
-                 margin-top: var(--space-8);
-             }
-
-             .extras-title {
-                 font-family: var(--font-display);
-                 font-size: 1.6rem;
-                 text-align: center;
-                 margin-bottom: var(--space-2);
-                 letter-spacing: .02em;
-             }
-
-             .extras-sub {
-                 text-align: center;
-                 color: var(--color-text-muted);
-                 font-size: .9rem;
-                 margin-bottom: var(--space-5);
-             }
-
-             .extras-grid {
-                 display: grid;
-                 grid-template-columns: repeat(2, 1fr);
-                 gap: var(--space-4);
-                 max-width: 640px;
-                 margin-inline: auto;
-             }
-
-             .extra-card {
-                 display: flex;
-                 flex-direction: column;
-                 gap: var(--space-3);
-                 background: var(--color-surface);
-                 border: 1px solid var(--color-border);
-                 border-radius: var(--radius-md);
-                 padding: var(--space-4) var(--space-5);
-             }
-
-             .extra-card-top {
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-between;
-             }
-
-             .extra-card-name {
-                 font-weight: 700;
-             }
-
-             .extra-card-price {
-                 color: var(--color-gold-light);
-                 font-weight: 700;
-                 margin-top: 2px;
-                 font-size: .88rem;
-             }
-
-             .extra-card-bottom {
-                 display: flex;
-                 align-items: center;
-                 gap: var(--space-3);
-             }
-
-                 .extra-card-bottom .flavor-select {
-                     flex: 1;
-                 }
-
-             .extra-card .qty-control {
-                 width: 118px;
-                 flex-shrink: 0;
-             }
-
-             .extra-card .qty-btn {
-                 width: 32px;
-                 height: 32px;
-                 font-size: 1rem;
-             }
-
-             .menu-note {
-                 text-align: center;
-                 color: var(--color-text-faint);
-                 font-size: .85rem;
-                 margin-top: var(--space-6);
-             }
-
-             .order-cta {
-                 max-width: 480px;
-                 margin: var(--space-8) auto 0;
-                 text-align: center;
-             }
-
-                 .order-cta .btn {
-                     position: relative;
-                     font-size: 1.05rem;
-                     min-height: 58px;
-                 }
-
-             .order-cta-badge {
-                 position: absolute;
-                 top: -8px;
-                 right: -8px;
-                 background: var(--color-gold);
-                 color: #241b02;
-                 font-size: .74rem;
-                 font-weight: 800;
-                 min-width: 24px;
-                 height: 24px;
-                 border-radius: 50%;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 border: 2px solid var(--color-bg);
-             }
-
-             .order-cta-hint {
-                 margin-top: var(--space-3);
-                 color: var(--color-text-faint);
-                 font-size: .85rem;
-             }
-
-             /* ================= ABOUT ================= */
-             .about {
-                 padding: var(--space-9) 0;
-                 background: var(--color-bg-alt);
-             }
-
-             .about-grid {
-                 display: grid;
-                 grid-template-columns: 1.1fr .9fr;
-                 gap: var(--space-8);
-                 align-items: center;
-             }
-
-             .about-copy p {
-                 color: var(--color-text-muted);
-                 margin-bottom: var(--space-4);
-                 font-size: 1.02rem;
-             }
-
-                 .about-copy p strong {
-                     color: var(--color-text);
-                 }
-
-             .tag-list {
-                 display: flex;
-                 flex-wrap: wrap;
-                 gap: var(--space-2);
-                 margin: var(--space-5) 0;
-             }
-
-                 .tag-list li {
-                     border: 1px solid var(--color-border);
-                     border-radius: var(--radius-pill);
-                     padding: 6px 16px;
-                     font-size: .85rem;
-                     font-weight: 600;
-                     color: var(--color-gold-light);
-                 }
-
-             .hours-card {
-                 background: var(--color-surface);
-                 border: 1px solid var(--color-border);
-                 border-radius: var(--radius-md);
-                 padding: var(--space-4) var(--space-5);
-                 margin-top: var(--space-5);
-             }
-
-             .hours-row {
-                 display: flex;
-                 justify-content: space-between;
-                 padding: var(--space-2) 0;
-                 border-bottom: 1px solid var(--color-border);
-             }
-
-                 .hours-row:last-child {
-                     border-bottom: none;
-                 }
-
-             .hours-row--muted {
-                 color: var(--color-text-faint);
-             }
-
-             .hours-time {
-                 font-weight: 700;
-                 color: var(--color-gold-light);
-             }
-
-             .hours-row--muted .hours-time {
-                 color: var(--color-text-faint);
-                 font-weight: 600;
-             }
-
-             .about-visual {
-                 position: relative;
-                 aspect-ratio: 1 / 1;
-                 border-radius: var(--radius-lg);
-                 background: repeating-conic-gradient(#e9e9ec 0 25%, #131316 0 50%);
-                 background-size: 34px 34px;
-                 overflow: hidden;
-                 box-shadow: var(--shadow-md);
-             }
-
-             .about-flag {
-                 position: absolute;
-                 inset: 0;
-                 background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(10,10,12,.85) 78%);
-             }
-
-             .about-logo {
-                 position: absolute;
-                 top: 50%;
-                 left: 50%;
-                 transform: translate(-50%, -50%);
-                 width: 42%;
-                 aspect-ratio: 1 / 1;
-                 object-fit: cover;
-                 border-radius: 50%;
-                 border: 3px solid var(--color-gold);
-                 box-shadow: 0 0 0 6px rgba(10,10,12,.6), 0 20px 50px rgba(0,0,0,.5);
-             }
-
-             .about-badge {
-                 position: absolute;
-                 bottom: var(--space-5);
-                 left: var(--space-5);
-                 right: var(--space-5);
-                 background: rgba(10,10,12,.85);
-                 backdrop-filter: blur(8px);
-                 border: 1px solid rgba(212,175,55,.4);
-                 border-radius: var(--radius-md);
-                 padding: var(--space-4);
-                 text-align: center;
-             }
-
-             .about-badge-num {
-                 display: block;
-                 font-family: var(--font-display);
-                 font-size: 2.2rem;
-                 color: var(--color-gold-light);
-             }
-
-             .about-badge-label {
-                 font-size: .8rem;
-                 color: var(--color-text-muted);
-                 text-transform: uppercase;
-                 letter-spacing: .08em;
-             }
-
-             /* ================= LOCATION ================= */
-             .location {
-                 padding: var(--space-9) 0;
-             }
-
-             .location-grid {
-                 display: grid;
-                 grid-template-columns: 1.5fr 1fr;
-                 gap: var(--space-5);
-                 margin-top: var(--space-6);
-             }
-
-             .map-wrap {
-                 border-radius: var(--radius-lg);
-                 overflow: hidden;
-                 border: 1px solid var(--color-border);
-                 min-height: 340px;
-                 filter: grayscale(.15) contrast(1.05);
-             }
-
-                 .map-wrap iframe {
-                     width: 100%;
-                     height: 100%;
-                     min-height: 340px;
-                     border: 0;
-                 }
-
-             .location-card {
-                 background: var(--color-surface);
-                 border: 1px solid var(--color-border);
-                 border-radius: var(--radius-lg);
-                 padding: var(--space-6);
-                 display: flex;
-                 flex-direction: column;
-                 gap: var(--space-5);
-             }
-
-             .location-item {
-                 display: flex;
-                 gap: var(--space-3);
-                 align-items: flex-start;
-             }
-
-                 .location-item .icon {
-                     width: 22px;
-                     height: 22px;
-                     color: var(--color-gold);
-                     flex-shrink: 0;
-                     margin-top: 2px;
-                 }
-
-                 .location-item strong {
-                     display: block;
-                     margin-bottom: 2px;
-                 }
-
-                 .location-item p {
-                     color: var(--color-text-muted);
-                     font-size: .92rem;
-                 }
-
-             /* ================= CTA BAND ================= */
-             .cta-band {
-                 padding: var(--space-8) 0;
-                 background: linear-gradient(120deg, var(--color-primary-dark), var(--color-primary) 60%, #7a0f17);
-                 position: relative;
-                 overflow: hidden;
-             }
-
-                 .cta-band::before {
-                     content: '';
-                     position: absolute;
-                     inset: 0;
-                     background-image: repeating-conic-gradient(rgba(255,255,255,.06) 0 25%, transparent 0 50%);
-                     background-size: 26px 26px;
-                     opacity: .5;
-                 }
-
-             .cta-band-inner {
-                 position: relative;
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-between;
-                 flex-wrap: wrap;
-                 gap: var(--space-5);
-             }
-
-                 .cta-band-inner h2 {
-                     font-family: var(--font-display);
-                     font-size: clamp(1.8rem, 4vw, 2.6rem);
-                 }
-
-                 .cta-band-inner p {
-                     color: rgba(255,255,255,.85);
-                     margin-top: var(--space-1);
-                 }
-
-             .cta-band .btn-primary {
-                 background: #fff;
-                 color: var(--color-primary-dark);
-                 box-shadow: 0 10px 30px rgba(0,0,0,.3);
-             }
-
-                 .cta-band .btn-primary:hover {
-                     transform: translateY(-2px);
-                 }
-
-             /* ================= FOOTER ================= */
-             .site-footer {
-                 background: var(--color-bg-alt);
-                 border-top: 1px solid var(--color-border);
-                 padding-top: var(--space-8);
-             }
-
-             .footer-grid {
-                 display: grid;
-                 grid-template-columns: 1.4fr 1fr 1fr 1fr;
-                 gap: var(--space-6);
-                 padding-bottom: var(--space-7);
-             }
-
-             .footer-brand p {
-                 color: var(--color-text-muted);
-                 margin: var(--space-3) 0 var(--space-4);
-                 font-size: .92rem;
-                 max-width: 280px;
-             }
-
-             .footer-col h4 {
-                 font-size: .8rem;
-                 text-transform: uppercase;
-                 letter-spacing: .1em;
-                 color: var(--color-gold);
-                 margin-bottom: var(--space-3);
-             }
-
-             .footer-col {
-                 display: flex;
-                 flex-direction: column;
-                 gap: var(--space-2);
-             }
-
-                 .footer-col a, .footer-col p {
-                     color: var(--color-text-muted);
-                     font-size: .92rem;
-                     transition: color var(--transition-fast);
-                 }
-
-                     .footer-col a:hover {
-                         color: var(--color-text);
-                     }
-
-             .footer-bottom {
-                 border-top: 1px solid var(--color-border);
-                 padding-block: var(--space-5);
-                 display: flex;
-                 justify-content: space-between;
-                 flex-wrap: wrap;
-                 gap: var(--space-2);
-                 color: var(--color-text-faint);
-                 font-size: .82rem;
-             }
-
-             .footer-credit {
-                 border-top: 1px solid var(--color-border);
-                 padding-block: var(--space-4);
-                 text-align: center;
-                 font-size: .78rem;
-                 color: var(--color-text-faint);
-                 letter-spacing: .04em;
-             }
-
-                 .footer-credit strong {
-                     color: var(--color-gold-light);
-                     font-weight: 700;
-                 }
-
-             /* ================= FLOATING WHATSAPP ================= */
-             .floating-whatsapp {
-                 position: fixed;
-                 right: var(--space-5);
-                 bottom: var(--space-5);
-                 width: 60px;
-                 height: 60px;
-                 background: var(--color-whatsapp);
-                 border-radius: 50%;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 box-shadow: 0 10px 30px rgba(37,211,102,.45);
-                 z-index: 80;
-                 transition: transform var(--transition-fast);
-             }
-
-                 .floating-whatsapp:hover {
-                     transform: scale(1.08);
-                 }
-
-                 .floating-whatsapp svg {
-                     width: 30px;
-                     height: 30px;
-                     fill: #06210f;
-                 }
-
-             .cart-badge {
-                 position: absolute;
-                 top: -4px;
-                 right: -4px;
-                 background: var(--color-gold);
-                 color: #241b02;
-                 font-size: .72rem;
-                 font-weight: 800;
-                 min-width: 22px;
-                 height: 22px;
-                 border-radius: 50%;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 border: 2px solid var(--color-bg-alt);
-             }
-
-             /* ================= ORDER PANEL ================= */
-             .order-backdrop {
-                 position: fixed;
-                 inset: 0;
-                 background: rgba(0,0,0,.6);
-                 z-index: 118;
-                 opacity: 0;
-                 pointer-events: none;
-                 transition: opacity var(--transition-base);
-             }
-
-                 .order-backdrop.is-visible {
-                     opacity: 1;
-                     pointer-events: auto;
-                 }
-
-             .order-panel {
-                 position: fixed;
-                 top: 0;
-                 right: 0;
-                 height: 100%;
-                 width: min(420px, 92vw);
-                 background: var(--color-bg-alt);
-                 border-left: 1px solid var(--color-border);
-                 z-index: 119;
-                 display: flex;
-                 flex-direction: column;
-                 transform: translateX(100%);
-                 transition: transform var(--transition-base);
-                 box-shadow: -20px 0 60px rgba(0,0,0,.5);
-             }
-
-                 .order-panel.is-open {
-                     transform: translateX(0);
-                 }
-
-             .order-panel-header {
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-between;
-                 padding: var(--space-5);
-                 border-bottom: 1px solid var(--color-border);
-             }
-
-                 .order-panel-header h3 {
-                     font-family: var(--font-display);
-                     font-size: 1.6rem;
-                     letter-spacing: .02em;
-                 }
-
-             .order-close {
-                 color: var(--color-text-muted);
-             }
-
-                 .order-close:hover {
-                     color: var(--color-text);
-                 }
-
-             .order-items {
-                 flex: 1;
-                 overflow-y: auto;
-                 padding: var(--space-5);
-                 display: flex;
-                 flex-direction: column;
-                 gap: var(--space-3);
-             }
-
-             .order-empty {
-                 color: var(--color-text-faint);
-                 text-align: center;
-                 margin-top: var(--space-6);
-                 font-size: .92rem;
-             }
-
-             .order-item {
-                 display: flex;
-                 align-items: center;
-                 justify-content: space-between;
-                 background: var(--color-surface);
-                 border: 1px solid var(--color-border);
-                 border-radius: var(--radius-md);
-                 padding: var(--space-3) var(--space-4);
-             }
-
-             .order-item-name {
-                 font-weight: 700;
-                 font-size: .92rem;
-             }
-
-             .order-item-sub {
-                 color: var(--color-text-faint);
-                 font-size: .78rem;
-                 margin-top: 2px;
-             }
-
-             .order-item-right {
-                 display: flex;
-                 align-items: center;
-                 gap: var(--space-3);
-             }
-
-             .order-item-price {
-                 color: var(--color-gold-light);
-                 font-weight: 700;
-                 font-size: .9rem;
-             }
-
-             .order-footer {
-                 border-top: 1px solid var(--color-border);
-                 padding: var(--space-5);
-                 display: flex;
-                 flex-direction: column;
-                 gap: var(--space-3);
-             }
-
-             .order-flavor {
-                 display: flex;
-                 flex-direction: column;
-                 gap: 6px;
-             }
-
-                 .order-flavor label {
-                     font-size: .78rem;
-                     text-transform: uppercase;
-                     letter-spacing: .06em;
-                     color: var(--color-text-faint);
-                 }
-
-                 .order-flavor select {
-                     background: var(--color-surface);
-                     border: 1px solid var(--color-border);
-                     border-radius: var(--radius-sm);
-                     padding: var(--space-3);
-                     color: var(--color-text);
-                     min-height: 44px;
-                 }
-
-             .order-warning {
-                 color: var(--color-primary-light);
-                 font-size: .82rem;
-                 text-align: center;
-                 background: rgba(208,31,43,.1);
-                 border: 1px solid rgba(208,31,43,.3);
-                 border-radius: var(--radius-sm);
-                 padding: var(--space-2) var(--space-3);
-             }
-
-             .order-total {
-                 display: flex;
-                 justify-content: space-between;
-                 align-items: center;
-                 font-size: 1.1rem;
-                 padding-block: var(--space-2);
-             }
-
-                 .order-total strong {
-                     font-family: var(--font-display);
-                     font-size: 1.6rem;
-                     color: var(--color-gold-light);
-                     letter-spacing: .02em;
-                 }
-
-             /* ================= REVEAL ANIMATION ================= */
-             .reveal {
-                 opacity: 0;
-                 transform: translateY(18px);
-                 transition: opacity 600ms ease, transform 600ms ease;
-             }
-
-                 .reveal.is-visible {
-                     opacity: 1;
-                     transform: translateY(0);
-                 }
-
-             @media (prefers-reduced-motion: reduce) {
-                 .reveal {
-                     opacity: 1;
-                     transform: none;
-                 }
-             }
-
-             /* ================= RESPONSIVE ================= */
-             @media (max-width: 1024px) {
-                 .flavors-inner {
-                     grid-template-columns: repeat(2, 1fr);
-                 }
-
-                 .menu-grid {
-                     grid-template-columns: repeat(2, 1fr);
-                 }
-
-                 .about-grid {
-                     grid-template-columns: 1fr;
-                 }
-
-                 .about-visual {
-                     max-width: 420px;
-                     margin-inline: auto;
-                     order: -1;
-                 }
-
-                 .location-grid {
-                     grid-template-columns: 1fr;
-                 }
-
-                 .footer-grid {
-                     grid-template-columns: 1fr 1fr;
-                 }
-             }
-
-             @media (max-width: 860px) {
-                 .main-nav {
-                     position: fixed;
-                     top: 0;
-                     right: 0;
-                     height: 100%;
-                     width: min(320px, 84vw);
-                     background: var(--color-bg-alt);
-                     border-left: 1px solid var(--color-border);
-                     flex-direction: column;
-                     align-items: flex-start;
-                     justify-content: flex-start;
-                     gap: var(--space-7);
-                     padding: var(--space-8) var(--space-5) var(--space-5);
-                     transform: translateX(100%);
-                     transition: transform var(--transition-base);
-                     z-index: 99;
-                 }
-
-                     .main-nav.is-open {
-                         transform: translateX(0);
-                     }
-
-                     .main-nav ul {
-                         flex-direction: column;
-                         gap: var(--space-2);
-                         width: 100%;
-                     }
-
-                 .nav-link {
-                     display: block;
-                     font-size: 1.2rem;
-                     padding: var(--space-3) 0;
-                 }
-
-                 .nav-toggle {
-                     display: flex;
-                 }
-
-                 .nav-close {
-                     display: block;
-                 }
-
-                 .main-nav .btn-whatsapp {
-                     width: 100%;
-                 }
-             }
-
-             @media (max-width: 720px) {
-                 .flavors-inner {
-                     grid-template-columns: 1fr;
-                 }
-
-                 .menu-grid {
-                     grid-template-columns: 1fr;
-                 }
-
-                 .extras-grid {
-                     grid-template-columns: 1fr;
-                 }
-
-                 .footer-grid {
-                     grid-template-columns: 1fr;
-                     gap: var(--space-5);
-                 }
-
-                 .cta-band-inner {
-                     flex-direction: column;
-                     align-items: flex-start;
-                 }
-
-                 .hero-title {
-                     font-size: clamp(3.4rem, 18vw, 6rem);
-                 }
-
-                 .container {
-                     padding-inline: var(--space-4);
-                 }
-
-                 .hero-meta {
-                     gap: var(--space-4);
-                 }
-             }
-
-             @media (max-width: 400px) {
-                 .btn {
-                     padding: 0 var(--space-5);
-                     font-size: .9rem;
-                 }
-
-                 .floating-whatsapp {
-                     width: 54px;
-                     height: 54px;
-                     right: var(--space-4);
-                     bottom: var(--space-4);
-                 }
-             }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Car Wings | El Único Sabor — Alitas en Quillacollo</title>
+<meta name="description" content="Car Wings — Restaurante de alitas en Quillacollo, Bolivia. Sabores Barbacoa, Miel y Mostaza y Picante. Pide por WhatsApp. El Único Sabor.">
+<meta name="theme-color" content="#0B0B0D">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Car Wings | El Único Sabor">
+<meta property="og:description" content="Alitas Barbacoa, Miel y Mostaza y Picante. Pide ya por WhatsApp — Quillacollo, Bolivia.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://i.imgur.com/tzRZQLo.jpeg">
+<meta property="og:locale" content="es_BO">
+
+<link rel="icon" type="image/jpeg" href="https://i.imgur.com/tzRZQLo.jpeg">
+<link rel="apple-touch-icon" href="https://i.imgur.com/tzRZQLo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   CAR WINGS — Design System
+   Style: Elegant Dark + Racing accents (checkered flag motif)
+   Fonts: Bebas Neue (display) + Barlow (body)
+   ========================================================================== */
+
+:root {
+  /* Color tokens */
+  --color-bg: #0a0a0c;
+  --color-bg-alt: #121215;
+  --color-surface: #18181c;
+  --color-surface-2: #202024;
+  --color-border: #2a2a30;
+
+  --color-primary: #d01f2b;
+  --color-primary-dark: #8f141d;
+  --color-primary-light: #ff4757;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #ecd27a;
+
+  --color-bbq: #a9542c;
+  --color-bbq-light: #c97a4d;
+
+  --color-text: #f5f5f2;
+  --color-text-muted: #a6a6ae;
+  --color-text-faint: #6f6f78;
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+
+  --color-ring: #ff4757;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', 'Segoe UI', sans-serif;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
+  --shadow-md: 0 8px 30px rgba(0,0,0,.45);
+  --shadow-glow-red: 0 0 0 1px rgba(255,71,87,.25), 0 12px 40px rgba(208,31,43,.28);
+  --shadow-glow-gold: 0 0 0 1px rgba(212,175,55,.3), 0 12px 30px rgba(212,175,55,.15);
+
+  --transition-fast: 160ms ease;
+  --transition-base: 240ms cubic-bezier(.4,0,.2,1);
+
+  --header-h: 76px;
+}
+
+/* ================= RESET ================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+body, h1, h2, h3, p, ul, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+input, select { font: inherit; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-3) var(--space-4);
+  z-index: 999;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-link:focus { left: 0; }
+
+/* ================= TYPOGRAPHY HELPERS ================= */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+.eyebrow--center { text-align: center; }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  letter-spacing: .02em;
+  line-height: 1.02;
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+.section-title--left { text-align: left; }
+
+.section-sub {
+  text-align: center;
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: var(--space-7);
+  font-size: 1.05rem;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 50px;
+  padding: 0 var(--space-6);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: .01em;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+.btn .icon { width: 18px; height: 18px; flex-shrink: 0; }
+.btn:active { transform: scale(.97); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  color: #fff;
+  box-shadow: var(--shadow-glow-red);
+}
+.btn-primary:hover { box-shadow: 0 0 0 1px rgba(255,71,87,.4), 0 16px 46px rgba(208,31,43,.4); transform: translateY(-2px); }
+
+.btn-whatsapp {
+  background: var(--color-whatsapp);
+  color: #06210f;
+}
+.btn-whatsapp:hover { background: var(--color-whatsapp-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,.35); }
+.btn-whatsapp svg path { fill: #06210f; }
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text);
+}
+.btn-outline:hover { border-color: var(--color-gold); color: var(--color-gold-light); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1.5px solid transparent;
+}
+.btn-ghost:hover { color: var(--color-text); border-color: var(--color-border); }
+
+.btn-small { min-height: 42px; padding: 0 var(--space-5); font-size: .88rem; }
+.btn-block { width: 100%; }
+
+/* ================= HEADER ================= */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--header-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  background: rgba(10,10,12,.7);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+.site-header.is-scrolled {
+  background: rgba(10,10,12,.92);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: 100%;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.brand-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: .04em;
+}
+.brand-text em { font-style: normal; color: var(--color-primary-light); }
+.brand-text--footer { font-size: 1.8rem; }
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 0 1px rgba(212,175,55,.2), 0 4px 14px rgba(0,0,0,.4);
+  flex-shrink: 0;
+}
+.brand-logo--footer { width: 56px; height: 56px; }
+
+.footer-brand-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+.main-nav ul {
+  display: flex;
+  gap: var(--space-5);
+}
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--color-text-muted);
+  padding: var(--space-2) 0;
+  transition: color var(--transition-fast);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+.nav-link:hover { color: var(--color-text); }
+.nav-link:hover::after,
+.nav-link.is-active::after { transform: scaleX(1); }
+.nav-link.is-active { color: var(--color-text); }
+
+.nav-close { display: none; position: absolute; top: var(--space-5); right: var(--space-5); color: var(--color-text); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+}
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(2px);
+  z-index: 98;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+.nav-backdrop.is-visible { opacity: 1; pointer-events: auto; }
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--header-h);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 900px 500px at 80% -10%, rgba(208,31,43,.28), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 5% 110%, rgba(212,175,55,.14), transparent 60%),
+    var(--color-bg);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(255,71,87,.08), transparent 55%);
+  pointer-events: none;
+}
+
+.hero-logo-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(1100px, 130vw);
+  height: min(1100px, 130vw);
+  transform: translate(-50%, -50%);
+  background-image: url('https://i.imgur.com/tzRZQLo.jpeg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: .16;
+  filter: blur(22px) saturate(115%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-flag {
+  position: absolute;
+  left: 0; right: 0;
+  height: 14px;
+  background-image: repeating-conic-gradient(#e9e9ec 0 25%, #131316 0 50%);
+  background-size: 22px 22px;
+  opacity: .5;
+}
+.hero-flag--top { top: 0; }
+.hero-flag--bottom { bottom: 0; }
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-block: var(--space-8);
+  max-width: 760px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 15vw, 8.5rem);
+  line-height: .85;
+  letter-spacing: .01em;
+}
+.hero-title-line { display: block; }
+.hero-title-accent {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 26px rgba(208,31,43,.45));
+}
+
+.hero-slogan {
+  font-family: var(--font-display);
+  letter-spacing: .3em;
+  color: var(--color-gold-light);
+  font-size: 1rem;
+  margin-top: var(--space-3);
+}
+
+.hero-wings-deco {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.hero-wings-deco .wing {
+  width: 42px;
+  height: auto;
+  color: var(--color-gold);
+  opacity: .92;
+  flex-shrink: 0;
+}
+.hero-wings-deco .wing-right { transform: scaleX(-1); }
+.hero-wings-slogan {
+  font-family: var(--font-display);
+  letter-spacing: .28em;
+  color: var(--color-gold-light);
+  font-size: .95rem;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .hero-wings-deco .wing { width: 30px; }
+  .hero-wings-slogan { font-size: .75rem; letter-spacing: .18em; }
+}
+
+.hero-desc {
+  margin-top: var(--space-5);
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 520px;
+}
+.hero-desc strong { color: var(--color-text); font-weight: 700; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin-top: var(--space-7);
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: .92rem;
+}
+.hero-meta-item .icon { width: 18px; height: 18px; color: var(--color-gold); flex-shrink: 0; }
+
+.scroll-cue {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-text-faint);
+  animation: bob 2.2s ease-in-out infinite;
+  z-index: 2;
+}
+@keyframes bob { 0%,100% { transform: translate(-50%,0);} 50% { transform: translate(-50%,8px);} }
+@media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } }
+
+/* ================= FLAVORS STRIP ================= */
+.flavors { padding: var(--space-8) 0; background: var(--color-bg-alt); }
+.flavors-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.flavor-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+.flavor-card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,.4); }
+.flavor-icon {
+  width: 56px; height: 56px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-4);
+}
+.flavor-icon svg { width: 28px; height: 28px; }
+.flavor-icon--bbq { background: rgba(169,84,44,.16); color: var(--color-bbq-light); }
+.flavor-icon--honey { background: rgba(236,210,122,.16); color: #f0d98c; }
+.flavor-icon--spicy { background: rgba(208,31,43,.16); color: var(--color-primary-light); }
+.flavor-card h3 { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: .02em; margin-bottom: var(--space-2); }
+.flavor-card p { color: var(--color-text-muted); font-size: .96rem; }
+
+/* ================= MENU ================= */
+.menu-section { padding: var(--space-9) 0; }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.menu-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+.menu-card:hover { transform: translateY(-6px); border-color: rgba(255,71,87,.4); box-shadow: var(--shadow-md); }
+.menu-card.is-popular { border-color: var(--color-gold); }
+
+.menu-card-badge {
+  position: absolute;
+  top: -12px; left: var(--space-4);
+  background: var(--color-gold);
+  color: #241b02;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.menu-card-icon {
+  width: 46px; height: 46px;
+  border-radius: var(--radius-sm);
+  background: rgba(208,31,43,.15);
+  color: var(--color-primary-light);
+  display: flex; align-items: center; justify-content: center;
+}
+.menu-card-icon svg { width: 24px; height: 24px; }
+
+.menu-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: .02em;
+  margin-top: var(--space-1);
+}
+.menu-card p.menu-card-desc { color: var(--color-text-muted); font-size: .88rem; flex-grow: 1; }
+
+.menu-card-price {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-gold-light);
+  letter-spacing: .02em;
+}
+.menu-card-price span { font-family: var(--font-body); font-size: .85rem; color: var(--color-text-muted); font-weight: 600; }
+
+.menu-card-options {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.field-label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--color-text-faint);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+.field-label--spaced { margin-top: 10px; }
+
+.flavor-select {
+  width: 100%;
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 11px 12px;
+  color: var(--color-text);
+  min-height: 44px;
+  transition: border-color var(--transition-fast);
+}
+.flavor-select.is-invalid { border-color: var(--color-primary-light); }
+
+.sauce-mode {
+  display: flex;
+  gap: var(--space-2);
+}
+.check-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 6px;
+  font-size: .76rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+  user-select: none;
+}
+.check-pill input { position: absolute; opacity: 0; width: 0; height: 0; }
+.check-pill.is-active {
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  background: rgba(212,175,55,.1);
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+}
+.qty-btn {
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: background var(--transition-fast);
+}
+.qty-btn:hover { background: var(--color-primary); }
+.qty-value { font-weight: 700; min-width: 24px; text-align: center; }
+
+.extras { margin-top: var(--space-8); }
+.extras-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: var(--space-2);
+  letter-spacing: .02em;
+}
+.extras-sub {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: .9rem;
+  margin-bottom: var(--space-5);
+}
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  max-width: 640px;
+  margin-inline: auto;
+}
+.extra-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.extra-card-top { display: flex; align-items: center; justify-content: space-between; }
+.extra-card-name { font-weight: 700; }
+.extra-card-price { color: var(--color-gold-light); font-weight: 700; margin-top: 2px; font-size: .88rem; }
+.extra-card-bottom { display: flex; align-items: center; gap: var(--space-3); }
+.extra-card-bottom .flavor-select { flex: 1; }
+.extra-card .qty-control { width: 118px; flex-shrink: 0; }
+.extra-card .qty-btn { width: 32px; height: 32px; font-size: 1rem; }
+
+.menu-note {
+  text-align: center;
+  color: var(--color-text-faint);
+  font-size: .85rem;
+  margin-top: var(--space-6);
+}
+
+.order-cta {
+  max-width: 480px;
+  margin: var(--space-8) auto 0;
+  text-align: center;
+}
+.order-cta .btn {
+  position: relative;
+  font-size: 1.05rem;
+  min-height: 58px;
+}
+.order-cta-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--color-gold);
+  color: #241b02;
+  font-size: .74rem;
+  font-weight: 800;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-bg);
+}
+.order-cta-hint {
+  margin-top: var(--space-3);
+  color: var(--color-text-faint);
+  font-size: .85rem;
+}
+
+/* ================= ABOUT ================= */
+.about { padding: var(--space-9) 0; background: var(--color-bg-alt); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+.about-copy p { color: var(--color-text-muted); margin-bottom: var(--space-4); font-size: 1.02rem; }
+.about-copy p strong { color: var(--color-text); }
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-5) 0;
+}
+.tag-list li {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+}
+
+.hours-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-5);
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-row--muted { color: var(--color-text-faint); }
+.hours-time { font-weight: 700; color: var(--color-gold-light); }
+.hours-row--muted .hours-time { color: var(--color-text-faint); font-weight: 600; }
+
+.about-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  background:
+    repeating-conic-gradient(#e9e9ec 0 25%, #131316 0 50%);
+  background-size: 34px 34px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.about-flag {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(10,10,12,.85) 78%);
+}
+.about-logo {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--color-gold);
+  box-shadow: 0 0 0 6px rgba(10,10,12,.6), 0 20px 50px rgba(0,0,0,.5);
+}
+.about-badge {
+  position: absolute;
+  bottom: var(--space-5);
+  left: var(--space-5);
+  right: var(--space-5);
+  background: rgba(10,10,12,.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212,175,55,.4);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+}
+.about-badge-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-gold-light);
+}
+.about-badge-label { font-size: .8rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: .08em; }
+
+/* ================= LOCATION ================= */
+.location { padding: var(--space-9) 0; }
+.location-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.map-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  min-height: 340px;
+  filter: grayscale(.15) contrast(1.05);
+}
+.map-wrap iframe { width: 100%; height: 100%; min-height: 340px; border: 0; }
+
+.location-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.location-item { display: flex; gap: var(--space-3); align-items: flex-start; }
+.location-item .icon { width: 22px; height: 22px; color: var(--color-gold); flex-shrink: 0; margin-top: 2px; }
+.location-item strong { display: block; margin-bottom: 2px; }
+.location-item p { color: var(--color-text-muted); font-size: .92rem; }
+
+/* ================= CTA BAND ================= */
+.cta-band {
+  padding: var(--space-8) 0;
+  background: linear-gradient(120deg, var(--color-primary-dark), var(--color-primary) 60%, #7a0f17);
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-conic-gradient(rgba(255,255,255,.06) 0 25%, transparent 0 50%);
+  background-size: 26px 26px;
+  opacity: .5;
+}
+.cta-band-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+.cta-band-inner h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.cta-band-inner p { color: rgba(255,255,255,.85); margin-top: var(--space-1); }
+.cta-band .btn-primary { background: #fff; color: var(--color-primary-dark); box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+.cta-band .btn-primary:hover { transform: translateY(-2px); }
+
+/* ================= FOOTER ================= */
+.site-footer { background: var(--color-bg-alt); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-6);
+  padding-bottom: var(--space-7);
+}
+.footer-brand p { color: var(--color-text-muted); margin: var(--space-3) 0 var(--space-4); font-size: .92rem; max-width: 280px; }
+.footer-col h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--color-gold); margin-bottom: var(--space-3); }
+.footer-col { display: flex; flex-direction: column; gap: var(--space-2); }
+.footer-col a, .footer-col p { color: var(--color-text-muted); font-size: .92rem; transition: color var(--transition-fast); }
+.footer-col a:hover { color: var(--color-text); }
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  color: var(--color-text-faint);
+  font-size: .82rem;
+}
+
+.footer-credit {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-4);
+  text-align: center;
+  font-size: .78rem;
+  color: var(--color-text-faint);
+  letter-spacing: .04em;
+}
+.footer-credit strong { color: var(--color-gold-light); font-weight: 700; }
+
+/* ================= FLOATING WHATSAPP ================= */
+.floating-whatsapp {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  width: 60px; height: 60px;
+  background: var(--color-whatsapp);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 30px rgba(37,211,102,.45);
+  z-index: 80;
+  transition: transform var(--transition-fast);
+}
+.floating-whatsapp:hover { transform: scale(1.08); }
+.floating-whatsapp svg { width: 30px; height: 30px; fill: #06210f; }
+.cart-badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  background: var(--color-gold);
+  color: #241b02;
+  font-size: .72rem;
+  font-weight: 800;
+  min-width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--color-bg-alt);
+}
+
+/* ================= ORDER PANEL ================= */
+.order-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 118;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+.order-backdrop.is-visible { opacity: 1; pointer-events: auto; }
+
+.order-panel {
+  position: fixed;
+  top: 0; right: 0;
+  height: 100%;
+  width: min(420px, 92vw);
+  background: var(--color-bg-alt);
+  border-left: 1px solid var(--color-border);
+  z-index: 119;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-base);
+  box-shadow: -20px 0 60px rgba(0,0,0,.5);
+}
+.order-panel.is-open { transform: translateX(0); }
+
+.order-panel-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+.order-panel-header h3 { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: .02em; }
+.order-close { color: var(--color-text-muted); }
+.order-close:hover { color: var(--color-text); }
+
+.order-items { flex: 1; overflow-y: auto; padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.order-empty { color: var(--color-text-faint); text-align: center; margin-top: var(--space-6); font-size: .92rem; }
+
+.order-item {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+.order-item-name { font-weight: 700; font-size: .92rem; }
+.order-item-sub { color: var(--color-text-faint); font-size: .78rem; margin-top: 2px; }
+.order-item-right { display: flex; align-items: center; gap: var(--space-3); }
+.order-item-price { color: var(--color-gold-light); font-weight: 700; font-size: .9rem; }
+
+.order-footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.order-flavor { display: flex; flex-direction: column; gap: 6px; }
+.order-flavor label { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-faint); }
+.order-flavor select {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  color: var(--color-text);
+  min-height: 44px;
+}
+.order-warning {
+  color: var(--color-primary-light);
+  font-size: .82rem;
+  text-align: center;
+  background: rgba(208,31,43,.1);
+  border: 1px solid rgba(208,31,43,.3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
+.order-total {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 1.1rem;
+  padding-block: var(--space-2);
+}
+.order-total strong { font-family: var(--font-display); font-size: 1.6rem; color: var(--color-gold-light); letter-spacing: .02em; }
+
+/* ================= REVEAL ANIMATION ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .flavors-inner { grid-template-columns: repeat(2, 1fr); }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-visual { max-width: 420px; margin-inline: auto; order: -1; }
+  .location-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 860px) {
+  .main-nav {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100%;
+    width: min(320px, 84vw);
+    background: var(--color-bg-alt);
+    border-left: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--space-7);
+    padding: var(--space-8) var(--space-5) var(--space-5);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    z-index: 99;
+  }
+  .main-nav.is-open { transform: translateX(0); }
+  .main-nav ul { flex-direction: column; gap: var(--space-2); width: 100%; }
+  .nav-link { display: block; font-size: 1.2rem; padding: var(--space-3) 0; }
+  .nav-toggle { display: flex; }
+  .nav-close { display: block; }
+  .main-nav .btn-whatsapp { width: 100%; }
+}
+
+@media (max-width: 720px) {
+  .flavors-inner { grid-template-columns: 1fr; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .extras-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-5); }
+  .cta-band-inner { flex-direction: column; align-items: flex-start; }
+  .hero-title { font-size: clamp(3.4rem, 18vw, 6rem); }
+  .container { padding-inline: var(--space-4); }
+  .hero-meta { gap: var(--space-4); }
+}
+
+@media (max-width: 400px) {
+  .btn { padding: 0 var(--space-5); font-size: .9rem; }
+  .floating-whatsapp { width: 54px; height: 54px; right: var(--space-4); bottom: var(--space-4); }
+}
+
+</style>
 </head>
 <body>
 
-    <a class="skip-link" href="#main">Saltar al contenido</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <!-- ================= HEADER / NAV ================= -->
-    <header class="site-header" id="siteHeader">
-        <div class="container nav-inner">
-            <a href="#inicio" class="brand" aria-label="Car Wings - Inicio">
-                <img class="brand-logo" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings" width="40" height="40">
-                <span class="brand-text">CAR <em>WINGS</em></span>
-            </a>
-
-            <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-                <ul>
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#menu" class="nav-link">Menú</a></li>
-                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
-                <a href="#" id="navWhatsapp" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z" /></svg>
-                    <span>Pedir ahora</span>
-                </a>
-                <button class="nav-close" id="navClose" aria-label="Cerrar menú">
-                    <svg viewBox="0 0 24 24" width="26" height="26"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
-                </button>
-            </nav>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-    <div class="nav-backdrop" id="navBackdrop"></div>
-
-    <main id="main">
-
-        <!-- ================= HERO ================= -->
-        <section class="hero" id="inicio">
-            <div class="hero-flag hero-flag--top" aria-hidden="true"></div>
-            <div class="hero-flag hero-flag--bottom" aria-hidden="true"></div>
-            <div class="hero-logo-bg" aria-hidden="true"></div>
-            <div class="hero-glow" aria-hidden="true"></div>
-
-            <div class="container hero-inner">
-                <p class="eyebrow reveal">Quillacollo · Bolivia</p>
-                <h1 class="hero-title reveal">
-                    <span class="hero-title-line">CAR</span>
-                    <span class="hero-title-line hero-title-accent">WINGS</span>
-                </h1>
-
-                <div class="hero-wings-deco reveal" aria-hidden="true">
-                    <span class="wing wing-right">🪶</span>
-                    <span class="hero-wings-slogan">El Único Sabor</span>
-                    <span class="wing wing-left">🪶</span>
-                </div>
-
-                <p class="hero-desc reveal">Alitas de pollo frito extra crujientes, bañadas en <strong>Barbacoa</strong>, <strong>Miel y Mostaza</strong> o <strong>Picante</strong>. Recién fritas, directo a tu mesa.</p>
-
-                <div class="hero-actions reveal">
-                    <a href="#menu" class="btn btn-primary">
-                        Ver el menú
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                    </a>
-                    <a href="#" id="heroWhatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z" /></svg>
-                        Pedir por WhatsApp
-                    </a>
-                </div>
-
-                <div class="hero-meta reveal">
-                    <div class="hero-meta-item">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none" /><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none" /></svg>
-                        <span>Lun – Sáb · 16:00 a 22:00</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" fill="none" /><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none" /></svg>
-                        <span>Av. Cochabamba 0855, Quillacollo</span>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#menu" class="scroll-cue" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 4v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
-            </a>
-        </section>
-
-        <!-- ================= FLAVORS STRIP ================= -->
-        <section class="flavors" aria-label="Sabores de alitas">
-            <div class="container flavors-inner">
-                <div class="flavor-card reveal">
-                    <div class="flavor-icon flavor-icon--bbq" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M8 21c-1-3 .5-5 2-6-1 2 0 3 1 3.5-.3-2 .5-3.5 2-4.5-.5 2 .5 3 1.5 3.5.8-1.5 0-3.5-1-5 2 .5 4 2.5 4.2 5.5.2 2-1.2 3.8-3.2 4-1.5.2-3-.3-4-1.5-1-1.2-1.7-2.5-2.5 1Z" fill="currentColor" /><path d="M6 21h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" /></svg>
-                    </div>
-                    <h3>Barbacoa</h3>
-                    <p>Ahumada e intensa, con ese toque dulce clásico que hace inconfundible a la barbacoa.</p>
-                </div>
-                <div class="flavor-card reveal">
-                    <div class="flavor-icon flavor-icon--honey" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 3c1.8 2.4 3 4.6 3 6.8a3 3 0 0 1-6 0C9 7.6 10.2 5.4 12 3Z" fill="currentColor" /><path d="M7 21c0-3 2-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" /><path d="M9 21h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
-                    </div>
-                    <h3>Miel y Mostaza</h3>
-                    <p>Dulce con un toque ácido que resalta perfecto lo crocante del empanizado.</p>
-                </div>
-                <div class="flavor-card reveal">
-                    <div class="flavor-icon flavor-icon--spicy" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M4 12c3-4 7-6 12-5 2 .4 4 1.6 4 3.5S18.5 14 16 13.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" /><path d="M4 12c0 3 2.5 6 6 6 3 0 5-2 5-4.4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" /></svg>
-                    </div>
-                    <h3>Picante</h3>
-                    <p>Empanizado extra crujiente con un picor que sube de a poco. El favorito de la casa.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= MENU ================= -->
-        <section class="menu-section" id="menu">
-            <div class="container">
-                <p class="eyebrow eyebrow--center reveal">Nuestro menú</p>
-                <h2 class="section-title reveal">Combos de Alitas</h2>
-                <p class="section-sub reveal">Elige tu combo, su sabor y cómo lo quieres. Te lo mandamos directo por WhatsApp.</p>
-
-                <div class="menu-grid" id="menuGrid" role="list"></div>
-
-                <div class="extras reveal">
-                    <h3 class="extras-title">Salsas extra</h3>
-                    <p class="extras-sub">Elige el sabor de tu salsa extra.</p>
-                    <div class="extras-grid" id="extrasGrid" role="list"></div>
-                </div>
-
-                <div class="order-cta reveal">
-                    <button type="button" id="openOrderBtn" class="btn btn-primary btn-block">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12L5 3H2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /><circle cx="9" cy="20" r="1.4" fill="currentColor" /><circle cx="17" cy="20" r="1.4" fill="currentColor" /></svg>
-                        Realizar pedido
-                        <span class="order-cta-badge" id="orderCtaBadge" hidden>0</span>
-                    </button>
-                    <p class="order-cta-hint">Revisa tu pedido, elige la modalidad y envíalo por WhatsApp en un toque.</p>
-                </div>
-
-                <p class="menu-note reveal">* Todos los combos incluyen porción(es) de papa.</p>
-            </div>
-        </section>
-
-        <!-- ================= ABOUT ================= -->
-        <section class="about" id="nosotros">
-            <div class="container about-grid">
-                <div class="about-copy reveal">
-                    <p class="eyebrow">Nosotros</p>
-                    <h2 class="section-title section-title--left">El Único Sabor</h2>
-                    <p>Car Wings es un restaurante de comida rápida en Quillacollo especializado en alitas de pollo frito extra crujientes. Doradas y crocantes por fuera, jugosas por dentro, bañadas en tres salsas que se pelean por ser tu favorita.</p>
-                    <p>Atendemos de <strong>lunes a sábado, de 16:00 a 22:00</strong>. Pedidos para recoger o coordinar entrega por WhatsApp.</p>
-
-                    <ul class="tag-list" aria-label="Etiquetas del restaurante">
-                        <li>#ElÚnicoSabor</li>
-                        <li>Alitas</li>
-                        <li>Barbacoa</li>
-                        <li>Miel y Mostaza</li>
-                        <li>Picante</li>
-                        <li>Crocante</li>
-                    </ul>
-
-                    <div class="hours-card">
-                        <div class="hours-row">
-                            <span>Lunes – Sábado</span>
-                            <span class="hours-time">16:00 – 22:00</span>
-                        </div>
-                        <div class="hours-row hours-row--muted">
-                            <span>Domingo</span>
-                            <span class="hours-time">Cerrado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-visual reveal">
-                    <div class="about-flag"></div>
-                    <img class="about-logo" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings">
-                    <div class="about-badge">
-                        <span class="about-badge-num">100%</span>
-                        <span class="about-badge-label">Pollo frito extra crocante</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= LOCATION ================= -->
-        <section class="location" id="ubicacion">
-            <div class="container">
-                <p class="eyebrow eyebrow--center reveal">Encuéntranos</p>
-                <h2 class="section-title reveal">Nuestra ubicación</h2>
-                <p class="section-sub reveal">Av. Cochabamba 0855, Quillacollo, Cochabamba, Bolivia</p>
-
-                <div class="location-grid">
-                    <div class="map-wrap reveal">
-                        <iframe title="Mapa de ubicación de Car Wings en Quillacollo, Bolivia"
-                                src="https://www.google.com/maps?q=-17.3946224,-66.2714369(Car+Wings)&z=17&output=embed"
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-
-                    <div class="location-card reveal">
-                        <div class="location-item">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" fill="none" /><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none" /></svg>
-                            <div>
-                                <strong>Dirección</strong>
-                                <p>Av. Cochabamba 0855, Quillacollo, Bolivia</p>
-                            </div>
-                        </div>
-                        <div class="location-item">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none" /><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none" /></svg>
-                            <div>
-                                <strong>Horario</strong>
-                                <p>Lunes a Sábado, 16:00 – 22:00</p>
-                            </div>
-                        </div>
-                        <a class="btn btn-outline" id="directionsBtn" href="https://maps.app.goo.gl/fNfV9CbyoCVKcLpM8" target="_blank" rel="noopener">
-                            Cómo llegar
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= CTA BAND ================= -->
-        <section class="cta-band">
-            <div class="container cta-band-inner reveal">
-                <div>
-                    <h2>¿Ya se te antojó?</h2>
-                    <p>Arma tu combo y pídelo en segundos por WhatsApp.</p>
-                </div>
-                <a href="#menu" class="btn btn-primary">Armar mi pedido</a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="site-footer" id="contacto">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="footer-brand-head">
-                    <img class="brand-logo brand-logo--footer" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings" width="56" height="56">
-                    <span class="brand-text brand-text--footer">CAR <em>WINGS</em></span>
-                </div>
-                <p>El Único Sabor. Alitas de comida rápida en Quillacollo, Bolivia.</p>
-                <a href="#" id="footerWhatsapp" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z" /></svg>
-                    WhatsApp
-                </a>
-            </div>
-
-            <nav class="footer-col" aria-label="Enlaces del sitio">
-                <h4>Navegación</h4>
-                <a href="#inicio">Inicio</a>
-                <a href="#menu">Menú</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#ubicacion">Ubicación</a>
-            </nav>
-
-            <div class="footer-col">
-                <h4>Contacto</h4>
-                <a href="mailto:carwingsbolivia@gmail.com">carwingsbolivia@gmail.com</a>
-                <a href="https://atri-soft.github.io/car-wings" target="_blank" rel="noopener">Nuestra página oficial</a>
-                <a href="https://www.facebook.com/share/1JDJpFFr2U/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook · Car Wings</a>
-            </div>
-
-            <div class="footer-col">
-                <h4>Ubicación</h4>
-                <p>Av. Cochabamba 0855<br>Quillacollo, Bolivia</p>
-                <p>Lun – Sáb, 16:00 – 22:00</p>
-            </div>
-        </div>
-
-        <div class="container footer-bottom">
-            <p>© <span id="year"></span> Car Wings. Todos los derechos reservados.</p>
-            <p>Hecho con orgullo en Quillacollo, Bolivia 🇧🇴</p>
-        </div>
-
-        <div class="container footer-credit">
-            <p>Developed by <strong>AtriSoft</strong></p>
-        </div>
-    </footer>
-
-    <!-- ================= FLOATING WHATSAPP ================= -->
-    <a href="#" id="floatingWhatsapp" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z" /></svg>
-        <span class="cart-badge" id="cartBadge" hidden>0</span>
+<!-- ================= HEADER / NAV ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="#inicio" class="brand" aria-label="Car Wings - Inicio">
+      <img class="brand-logo" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings" width="40" height="40">
+      <span class="brand-text">CAR <em>WINGS</em></span>
     </a>
 
-    <!-- ================= ORDER PANEL (Slide-over) ================= -->
-    <div class="order-backdrop" id="orderBackdrop"></div>
-    <aside class="order-panel" id="orderPanel" aria-label="Tu pedido" aria-hidden="true">
-        <div class="order-panel-header">
-            <h3>Tu pedido</h3>
-            <button class="order-close" id="orderClose" aria-label="Cerrar panel de pedido">
-                <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
-            </button>
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#menu" class="nav-link">Menú</a></li>
+        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+        <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <a href="#" id="navWhatsapp" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+        <span>Pedir ahora</span>
+      </a>
+      <button class="nav-close" id="navClose" aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="hero-flag hero-flag--top" aria-hidden="true"></div>
+    <div class="hero-flag hero-flag--bottom" aria-hidden="true"></div>
+    <div class="hero-logo-bg" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <p class="eyebrow reveal">Quillacollo · Bolivia</p>
+      <h1 class="hero-title reveal">
+        <span class="hero-title-line">CAR</span>
+        <span class="hero-title-line hero-title-accent">WINGS</span>
+      </h1>
+
+      <div class="hero-wings-deco reveal" aria-hidden="true">
+        <svg viewBox="0 0 100 100" class="wing wing-left">
+          <path d="M94,86C74,56 46,28 18,12C4,4 10,70 48,94C68,99 88,94 94,86Z" fill="currentColor"/>
+          <path d="M94,86C84.14,61.21 68.18,36.63 50.37,20.74C41.47,12.8 35.66,61.49 59.47,84.71C73.18,91.41 88.43,90.87 94,86Z" fill="currentColor" opacity=".9"/>
+          <path d="M94,86C90.97,68.23 83.87,49.75 74.33,36.74C69.57,30.24 58.88,61.61 71.36,80.3C79.48,86.65 89.63,88.43 94,86Z" fill="currentColor" opacity=".85"/>
+        </svg>
+        <span class="hero-wings-slogan">El Único Sabor</span>
+        <svg viewBox="0 0 100 100" class="wing wing-right">
+          <path d="M94,86C74,56 46,28 18,12C4,4 10,70 48,94C68,99 88,94 94,86Z" fill="currentColor"/>
+          <path d="M94,86C84.14,61.21 68.18,36.63 50.37,20.74C41.47,12.8 35.66,61.49 59.47,84.71C73.18,91.41 88.43,90.87 94,86Z" fill="currentColor" opacity=".9"/>
+          <path d="M94,86C90.97,68.23 83.87,49.75 74.33,36.74C69.57,30.24 58.88,61.61 71.36,80.3C79.48,86.65 89.63,88.43 94,86Z" fill="currentColor" opacity=".85"/>
+        </svg>
+      </div>
+
+      <p class="hero-desc reveal">Alitas de pollo frito extra crujientes, bañadas en <strong>Barbacoa</strong>, <strong>Miel y Mostaza</strong> o <strong>Picante</strong>. Recién fritas, directo a tu mesa.</p>
+
+      <div class="hero-actions reveal">
+        <a href="#menu" class="btn btn-primary">
+          Ver el menú
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </a>
+        <a href="#" id="heroWhatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+          Pedir por WhatsApp
+        </a>
+      </div>
+
+      <div class="hero-meta reveal">
+        <div class="hero-meta-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+          <span>Lun – Sáb · 16:00 a 22:00</span>
         </div>
-        <div class="order-items" id="orderItems">
-            <p class="order-empty" id="orderEmpty">Aún no agregaste combos. Ve al menú y elige tus favoritos 🍗</p>
+        <div class="hero-meta-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          <span>Av. Cochabamba 0855, Quillacollo</span>
         </div>
-        <div class="order-footer">
-            <p class="order-warning" id="orderWarning" hidden>⚠️ Selecciona el sabor de todos tus combos y salsas antes de enviar el pedido.</p>
-            <div class="order-flavor">
-                <label for="deliveryMode">Modalidad</label>
-                <select id="deliveryMode">
-                    <option value="A domicilio">A domicilio</option>
-                    <option value="Para recoger en el local">Para recoger en el local</option>
-                </select>
+      </div>
+    </div>
+
+    <a href="#menu" class="scroll-cue" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 4v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ================= FLAVORS STRIP ================= -->
+  <section class="flavors" aria-label="Sabores de alitas">
+    <div class="container flavors-inner">
+      <div class="flavor-card reveal">
+        <div class="flavor-icon flavor-icon--bbq" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 21c-1-3 .5-5 2-6-1 2 0 3 1 3.5-.3-2 .5-3.5 2-4.5-.5 2 .5 3 1.5 3.5.8-1.5 0-3.5-1-5 2 .5 4 2.5 4.2 5.5.2 2-1.2 3.8-3.2 4-1.5.2-3-.3-4-1.5-1-1.2-1.7-2.5-2.5 1Z" fill="currentColor"/><path d="M6 21h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Barbacoa</h3>
+        <p>Ahumada e intensa, con ese toque dulce clásico que hace inconfundible a la barbacoa.</p>
+      </div>
+      <div class="flavor-card reveal">
+        <div class="flavor-icon flavor-icon--honey" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3c1.8 2.4 3 4.6 3 6.8a3 3 0 0 1-6 0C9 7.6 10.2 5.4 12 3Z" fill="currentColor"/><path d="M7 21c0-3 2-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M9 21h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Miel y Mostaza</h3>
+        <p>Dulce con un toque ácido que resalta perfecto lo crocante del empanizado.</p>
+      </div>
+      <div class="flavor-card reveal">
+        <div class="flavor-icon flavor-icon--spicy" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 12c3-4 7-6 12-5 2 .4 4 1.6 4 3.5S18.5 14 16 13.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M4 12c0 3 2.5 6 6 6 3 0 5-2 5-4.4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Picante</h3>
+        <p>Empanizado extra crujiente con un picor que sube de a poco. El favorito de la casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MENU ================= -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <p class="eyebrow eyebrow--center reveal">Nuestro menú</p>
+      <h2 class="section-title reveal">Combos de Alitas</h2>
+      <p class="section-sub reveal">Elige tu combo, su sabor y cómo lo quieres. Te lo mandamos directo por WhatsApp.</p>
+
+      <div class="menu-grid" id="menuGrid" role="list"></div>
+
+      <div class="extras reveal">
+        <h3 class="extras-title">Salsas extra</h3>
+        <p class="extras-sub">Elige el sabor de tu salsa extra.</p>
+        <div class="extras-grid" id="extrasGrid" role="list"></div>
+      </div>
+
+      <div class="order-cta reveal">
+        <button type="button" id="openOrderBtn" class="btn btn-primary btn-block">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12L5 3H2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+          Realizar pedido
+          <span class="order-cta-badge" id="orderCtaBadge" hidden>0</span>
+        </button>
+        <p class="order-cta-hint">Revisa tu pedido, elige la modalidad y envíalo por WhatsApp en un toque.</p>
+      </div>
+
+      <p class="menu-note reveal">* Todos los combos incluyen porción(es) de papa.</p>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" id="nosotros">
+    <div class="container about-grid">
+      <div class="about-copy reveal">
+        <p class="eyebrow">Nosotros</p>
+        <h2 class="section-title section-title--left">El Único Sabor</h2>
+        <p>Car Wings es un restaurante de comida rápida en Quillacollo especializado en alitas de pollo frito extra crujientes. Doradas y crocantes por fuera, jugosas por dentro, bañadas en tres salsas que se pelean por ser tu favorita.</p>
+        <p>Atendemos de <strong>lunes a sábado, de 16:00 a 22:00</strong>. Pedidos para recoger o coordinar entrega por WhatsApp.</p>
+
+        <ul class="tag-list" aria-label="Etiquetas del restaurante">
+          <li>#ElÚnicoSabor</li>
+          <li>Alitas</li>
+          <li>Barbacoa</li>
+          <li>Miel y Mostaza</li>
+          <li>Picante</li>
+          <li>Crocante</li>
+        </ul>
+
+        <div class="hours-card">
+          <div class="hours-row">
+            <span>Lunes – Sábado</span>
+            <span class="hours-time">16:00 – 22:00</span>
+          </div>
+          <div class="hours-row hours-row--muted">
+            <span>Domingo</span>
+            <span class="hours-time">Cerrado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal">
+        <div class="about-flag"></div>
+        <img class="about-logo" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings">
+        <div class="about-badge">
+          <span class="about-badge-num">100%</span>
+          <span class="about-badge-label">Pollo frito extra crocante</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCATION ================= -->
+  <section class="location" id="ubicacion">
+    <div class="container">
+      <p class="eyebrow eyebrow--center reveal">Encuéntranos</p>
+      <h2 class="section-title reveal">Nuestra ubicación</h2>
+      <p class="section-sub reveal">Av. Cochabamba 0855, Quillacollo, Cochabamba, Bolivia</p>
+
+      <div class="location-grid">
+        <div class="map-wrap reveal">
+          <iframe
+            title="Mapa de ubicación de Car Wings en Quillacollo, Bolivia"
+            src="https://www.google.com/maps?q=-17.3946224,-66.2714369(Car+Wings)&z=17&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="location-card reveal">
+          <div class="location-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+            <div>
+              <strong>Dirección</strong>
+              <p>Av. Cochabamba 0855, Quillacollo, Bolivia</p>
             </div>
-            <div class="order-total">
-                <span>Total</span>
-                <strong id="orderTotal">0 Bs.</strong>
+          </div>
+          <div class="location-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+            <div>
+              <strong>Horario</strong>
+              <p>Lunes a Sábado, 16:00 – 22:00</p>
             </div>
-            <a href="#" id="orderSend" class="btn btn-whatsapp btn-block" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z" /></svg>
-                Enviar pedido por WhatsApp
-            </a>
-            <button class="btn btn-ghost btn-block" id="orderClear">Vaciar pedido</button>
+          </div>
+          <a class="btn btn-outline" id="directionsBtn" href="https://maps.app.goo.gl/fNfV9CbyoCVKcLpM8" target="_blank" rel="noopener">
+            Cómo llegar
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
         </div>
-    </aside>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        'use strict';
+  <!-- ================= CTA BAND ================= -->
+  <section class="cta-band">
+    <div class="container cta-band-inner reveal">
+      <div>
+        <h2>¿Ya se te antojó?</h2>
+        <p>Arma tu combo y pídelo en segundos por WhatsApp.</p>
+      </div>
+      <a href="#menu" class="btn btn-primary">Armar mi pedido</a>
+    </div>
+  </section>
 
-        /* ==========================================================================
-        CAR WINGS — Configuración del negocio
-        Edita SOLO esta sección con los datos reales del restaurante.
-        ========================================================================== */
-        const CONFIG = {
-        whatsappNumber: '59160778773',
-        businessName: 'Car Wings',
-        };
+</main>
 
-        const FLAVORS = ['Barbacoa', 'Miel y Mostaza', 'Picante'];
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="contacto">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-head">
+        <img class="brand-logo brand-logo--footer" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings" width="56" height="56">
+        <span class="brand-text brand-text--footer">CAR <em>WINGS</em></span>
+      </div>
+      <p>El Único Sabor. Alitas de comida rápida en Quillacollo, Bolivia.</p>
+      <a href="#" id="footerWhatsapp" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
 
-        const MENU_ITEMS = [
-        { id: 'combo4', name: '4 Piezas + Papa', desc: '4 alitas + 1 porción de papa', price: 20 },
-        { id: 'combo6', name: '6 Piezas + Papa', desc: '6 alitas + 1 porción de papa', price: 30, popular: true },
-        { id: 'combo14', name: '14 Piezas + Papa', desc: '14 alitas + 1 porción de papa', price: 70 },
-        { id: 'combo28', name: '28 Piezas + 2 Papas', desc: '28 alitas + 2 porciones de papa', price: 130 },
-        ];
+    <nav class="footer-col" aria-label="Enlaces del sitio">
+      <h4>Navegación</h4>
+      <a href="#inicio">Inicio</a>
+      <a href="#menu">Menú</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
 
-        const EXTRA_ITEMS = [
-        { id: 'salsa40', name: 'Salsa extra 40 ml', price: 2 },
-        { id: 'salsa100', name: 'Salsa extra 100 ml', price: 5 },
-        ];
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:carwingsbolivia@gmail.com">carwingsbolivia@gmail.com</a>
+      <a href="https://atri-soft.github.io/car-wings" target="_blank" rel="noopener">Nuestra página oficial</a>
+      <a href="https://www.facebook.com/share/1JDJpFFr2U/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook · Car Wings</a>
+    </div>
 
-        const WING_ICON_SVG = `<svg viewBox="0 0 24 24"><path d="M12 3c-2.5 2.5-2.5 4.2-.8 6-1.3.4-2.2 1.7-2.2 3.3A3.1 3.1 0 0 0 12 15.4a3.1 3.1 0 0 0 3-3.1c0-1.6-.9-2.9-2.2-3.3 1.7-1.8 1.7-3.5-.8-6Z" fill="currentColor"/><path d="M6 20c1-2 2-3 6-3s5 1 6 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>`;
+    <div class="footer-col">
+      <h4>Ubicación</h4>
+      <p>Av. Cochabamba 0855<br>Quillacollo, Bolivia</p>
+      <p>Lun – Sáb, 16:00 – 22:00</p>
+    </div>
+  </div>
 
-        function flavorOptions(selected) {
-        return `<option value="">Selecciona sabor</option>` +
-        FLAVORS.map((f) => `<option value="${f}" ${f === selected ? 'selected' : ''}>${f}</option>`).join('');
-        }
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> Car Wings. Todos los derechos reservados.</p>
+    <p>Hecho con orgullo en Quillacollo, Bolivia 🇧🇴</p>
+  </div>
 
-        /* ==========================================================================
-        Estado del carrito
-        cart[id] = { qty, flavor, mode }  ->  mode solo aplica a combos ('bañado' | 'aparte')
-        ========================================================================== */
-        const STORAGE_KEY = 'carwings_order_v2';
+  <div class="container footer-credit">
+    <p>Developed by <strong>AtriSoft</strong></p>
+  </div>
+</footer>
 
-        function loadCart() {
-        try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : {};
-        } catch (e) {
-        return {};
-        }
-        }
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a href="#" id="floatingWhatsapp" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+  <span class="cart-badge" id="cartBadge" hidden>0</span>
+</a>
 
-        function saveCart(cart) {
-        try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-        } catch (e) { /* almacenamiento no disponible */ }
-        }
+<!-- ================= ORDER PANEL (Slide-over) ================= -->
+<div class="order-backdrop" id="orderBackdrop"></div>
+<aside class="order-panel" id="orderPanel" aria-label="Tu pedido" aria-hidden="true">
+  <div class="order-panel-header">
+    <h3>Tu pedido</h3>
+    <button class="order-close" id="orderClose" aria-label="Cerrar panel de pedido">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="order-items" id="orderItems">
+    <p class="order-empty" id="orderEmpty">Aún no agregaste combos. Ve al menú y elige tus favoritos 🍗</p>
+  </div>
+  <div class="order-footer">
+    <p class="order-warning" id="orderWarning" hidden>⚠️ Selecciona el sabor de todos tus combos y salsas antes de enviar el pedido.</p>
+    <div class="order-flavor">
+      <label for="deliveryMode">Modalidad</label>
+      <select id="deliveryMode">
+        <option value="A domicilio">A domicilio</option>
+        <option value="Para recoger en el local">Para recoger en el local</option>
+      </select>
+    </div>
+    <div class="order-total">
+      <span>Total</span>
+      <strong id="orderTotal">0 Bs.</strong>
+    </div>
+    <a href="#" id="orderSend" class="btn btn-whatsapp btn-block" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+      Enviar pedido por WhatsApp
+    </a>
+    <button class="btn btn-ghost btn-block" id="orderClear">Vaciar pedido</button>
+  </div>
+</aside>
 
-        let cart = loadCart();
+<script>
+'use strict';
 
-        function getEntry(id) {
-        if (!cart[id]) cart[id] = { qty: 0, flavor: '', mode: 'bañado' };
-        return cart[id];
-        }
+/* ==========================================================================
+   CAR WINGS — Configuración del negocio
+   Edita SOLO esta sección con los datos reales del restaurante.
+   ========================================================================== */
+const CONFIG = {
+  whatsappNumber: '59160778773',
+  businessName: 'Car Wings',
+};
 
-        /* ==========================================================================
-        Helpers
-        ========================================================================== */
-        function formatBs(n) {
-        return `${n} Bs.`;
-        }
+const FLAVORS = ['Barbacoa', 'Miel y Mostaza', 'Picante'];
 
-        function buildWhatsappUrl(message) {
-        const digits = CONFIG.whatsappNumber.replace(/\D/g, '');
-        return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
-        }
+const MENU_ITEMS = [
+  { id: 'combo4', name: '4 Piezas + Papa', desc: '4 alitas + 1 porción de papa', price: 20 },
+  { id: 'combo6', name: '6 Piezas + Papa', desc: '6 alitas + 1 porción de papa', price: 30, popular: true },
+  { id: 'combo14', name: '14 Piezas + Papa', desc: '14 alitas + 1 porción de papa', price: 70 },
+  { id: 'combo28', name: '28 Piezas + 2 Papas', desc: '28 alitas + 2 porciones de papa', price: 130 },
+];
 
-        function baseGreeting() {
-        return `Hola Car Wings 👋 Quisiera hacer un pedido.`;
-        }
+const EXTRA_ITEMS = [
+  { id: 'salsa40', name: 'Salsa extra 40 ml', price: 2 },
+  { id: 'salsa100', name: 'Salsa extra 100 ml', price: 5 },
+];
 
-        function allItemsById() {
-        return [...MENU_ITEMS, ...EXTRA_ITEMS].reduce((acc, i) => {
-        acc[i.id] = i;
-        return acc;
-        }, {});
-        }
+const WING_ICON_SVG = `<svg viewBox="0 0 24 24"><path d="M12 3c-2.5 2.5-2.5 4.2-.8 6-1.3.4-2.2 1.7-2.2 3.3A3.1 3.1 0 0 0 12 15.4a3.1 3.1 0 0 0 3-3.1c0-1.6-.9-2.9-2.2-3.3 1.7-1.8 1.7-3.5-.8-6Z" fill="currentColor"/><path d="M6 20c1-2 2-3 6-3s5 1 6 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>`;
 
-        /* ==========================================================================
-        Render del menú
-        ========================================================================== */
-        function renderMenu() {
-        const grid = document.getElementById('menuGrid');
-        const extrasGrid = document.getElementById('extrasGrid');
-        if (!grid || !extrasGrid) return;
+function flavorOptions(selected) {
+  return `<option value="">Selecciona sabor</option>` +
+    FLAVORS.map((f) => `<option value="${f}" ${f === selected ? 'selected' : ''}>${f}</option>`).join('');
+}
 
-        grid.innerHTML = MENU_ITEMS.map((item) => {
-        const entry = getEntry(item.id);
-        return `
-        <article class="menu-card ${item.popular ? 'is-popular' : ''}" role="listitem" data-id="${item.id}">
-        ${item.popular ? '<span class="menu-card-badge">Más pedido</span>' : ''}
-        <div class="menu-card-icon" aria-hidden="true">${WING_ICON_SVG}</div>
-        <h3>${item.name}</h3>
-        <p class="menu-card-desc">${item.desc}</p>
-        <p class="menu-card-price">${item.price} <span>Bs.</span></p>
+/* ==========================================================================
+   Estado del carrito
+   cart[id] = { qty, flavor, mode }  ->  mode solo aplica a combos ('bañado' | 'aparte')
+   ========================================================================== */
+const STORAGE_KEY = 'carwings_order_v2';
 
-        <div class="menu-card-options">
+function loadCart() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveCart(cart) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  } catch (e) { /* almacenamiento no disponible */ }
+}
+
+let cart = loadCart();
+
+function getEntry(id) {
+  if (!cart[id]) cart[id] = { qty: 0, flavor: '', mode: 'bañado' };
+  return cart[id];
+}
+
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+function formatBs(n) {
+  return `${n} Bs.`;
+}
+
+function buildWhatsappUrl(message) {
+  const digits = CONFIG.whatsappNumber.replace(/\D/g, '');
+  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
+}
+
+function baseGreeting() {
+  return `Hola Car Wings 👋 Quisiera hacer un pedido.`;
+}
+
+function allItemsById() {
+  return [...MENU_ITEMS, ...EXTRA_ITEMS].reduce((acc, i) => {
+    acc[i.id] = i;
+    return acc;
+  }, {});
+}
+
+/* ==========================================================================
+   Render del menú
+   ========================================================================== */
+function renderMenu() {
+  const grid = document.getElementById('menuGrid');
+  const extrasGrid = document.getElementById('extrasGrid');
+  if (!grid || !extrasGrid) return;
+
+  grid.innerHTML = MENU_ITEMS.map((item) => {
+    const entry = getEntry(item.id);
+    return `
+    <article class="menu-card ${item.popular ? 'is-popular' : ''}" role="listitem" data-id="${item.id}">
+      ${item.popular ? '<span class="menu-card-badge">Más pedido</span>' : ''}
+      <div class="menu-card-icon" aria-hidden="true">${WING_ICON_SVG}</div>
+      <h3>${item.name}</h3>
+      <p class="menu-card-desc">${item.desc}</p>
+      <p class="menu-card-price">${item.price} <span>Bs.</span></p>
+
+      <div class="menu-card-options">
         <label class="field-label">Sabor</label>
         <select class="flavor-select" data-flavor-for="${item.id}">
-        ${flavorOptions(entry.flavor)}
+          ${flavorOptions(entry.flavor)}
         </select>
 
         <label class="field-label field-label--spaced">¿Cómo lo quieres?</label>
         <div class="sauce-mode" data-sauce-for="${item.id}">
-        <label class="check-pill ${entry.mode === 'bañado' ? 'is-active' : ''}" data-pill="bañado">
-        <input type="checkbox" data-mode="bañado" ${entry.mode === 'bañado' ? 'checked' : ''}> Bañado
-        </label>
-        <label class="check-pill ${entry.mode === 'aparte' ? 'is-active' : ''}" data-pill="aparte">
-        <input type="checkbox" data-mode="aparte" ${entry.mode === 'aparte' ? 'checked' : ''}> Salsa aparte
-        </label>
+          <label class="check-pill ${entry.mode === 'bañado' ? 'is-active' : ''}" data-pill="bañado">
+            <input type="checkbox" data-mode="bañado" ${entry.mode === 'bañado' ? 'checked' : ''}> Bañado
+          </label>
+          <label class="check-pill ${entry.mode === 'aparte' ? 'is-active' : ''}" data-pill="aparte">
+            <input type="checkbox" data-mode="aparte" ${entry.mode === 'aparte' ? 'checked' : ''}> Salsa aparte
+          </label>
         </div>
-        </div>
+      </div>
 
-        <div class="qty-control" data-id="${item.id}">
+      <div class="qty-control" data-id="${item.id}">
         <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar una unidad de ${item.name}">–</button>
         <span class="qty-value" data-qty="${item.id}">${entry.qty}</span>
         <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar una unidad de ${item.name}">+</button>
-        </div>
-        </article>
-        `;
-        }).join('');
+      </div>
+    </article>
+  `;
+  }).join('');
 
-        extrasGrid.innerHTML = EXTRA_ITEMS.map((item) => {
-        const entry = getEntry(item.id);
-        return `
-        <div class="extra-card" role="listitem" data-id="${item.id}">
-        <div class="extra-card-top">
+  extrasGrid.innerHTML = EXTRA_ITEMS.map((item) => {
+    const entry = getEntry(item.id);
+    return `
+    <div class="extra-card" role="listitem" data-id="${item.id}">
+      <div class="extra-card-top">
         <div>
-        <p class="extra-card-name">${item.name}</p>
-        <p class="extra-card-price">${formatBs(item.price)}</p>
+          <p class="extra-card-name">${item.name}</p>
+          <p class="extra-card-price">${formatBs(item.price)}</p>
         </div>
-        </div>
-        <div class="extra-card-bottom">
+      </div>
+      <div class="extra-card-bottom">
         <select class="flavor-select" data-flavor-for="${item.id}">
-        ${flavorOptions(entry.flavor)}
+          ${flavorOptions(entry.flavor)}
         </select>
         <div class="qty-control" data-id="${item.id}">
-        <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar una unidad de ${item.name}">–</button>
-        <span class="qty-value" data-qty="${item.id}">${entry.qty}</span>
-        <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar una unidad de ${item.name}">+</button>
+          <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar una unidad de ${item.name}">–</button>
+          <span class="qty-value" data-qty="${item.id}">${entry.qty}</span>
+          <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar una unidad de ${item.name}">+</button>
         </div>
-        </div>
-        </div>
-        `;
-        }).join('');
+      </div>
+    </div>
+  `;
+  }).join('');
 
-        grid.addEventListener('click', onQtyClick);
-        extrasGrid.addEventListener('click', onQtyClick);
-        grid.addEventListener('click', onSaucePillClick);
-        grid.addEventListener('change', onFlavorChange);
-        extrasGrid.addEventListener('change', onFlavorChange);
+  grid.addEventListener('click', onQtyClick);
+  extrasGrid.addEventListener('click', onQtyClick);
+  grid.addEventListener('click', onSaucePillClick);
+  grid.addEventListener('change', onFlavorChange);
+  extrasGrid.addEventListener('change', onFlavorChange);
 
-        syncQtyDisplays();
-        }
+  syncQtyDisplays();
+}
 
-        /* ==========================================================================
-        Interacciones del menú
-        ========================================================================== */
-        function onQtyClick(e) {
-        const btn = e.target.closest('.qty-btn');
-        if (!btn) return;
-        const wrap = btn.closest('.qty-control');
-        const id = wrap.dataset.id;
-        const entry = getEntry(id);
+/* ==========================================================================
+   Interacciones del menú
+   ========================================================================== */
+function onQtyClick(e) {
+  const btn = e.target.closest('.qty-btn');
+  if (!btn) return;
+  const wrap = btn.closest('.qty-control');
+  const id = wrap.dataset.id;
+  const entry = getEntry(id);
 
-        if (btn.dataset.action === 'inc') {
-        entry.qty = Math.min(entry.qty + 1, 99);
-        } else {
-        entry.qty = Math.max(entry.qty - 1, 0);
-        if (entry.qty === 0) delete cart[id];
-        }
+  if (btn.dataset.action === 'inc') {
+    entry.qty = Math.min(entry.qty + 1, 99);
+  } else {
+    entry.qty = Math.max(entry.qty - 1, 0);
+    if (entry.qty === 0) delete cart[id];
+  }
 
-        saveCart(cart);
-        syncQtyDisplays();
-        renderOrderPanel();
-        updateCartBadge();
-        }
+  saveCart(cart);
+  syncQtyDisplays();
+  renderOrderPanel();
+  updateCartBadge();
+}
 
-        function onFlavorChange(e) {
-        const select = e.target.closest('.flavor-select');
-        if (!select) return;
-        const id = select.dataset.flavorFor;
-        const entry = getEntry(id);
-        entry.flavor = select.value;
-        select.classList.remove('is-invalid');
-        saveCart(cart);
-        renderOrderPanel();
-        }
+function onFlavorChange(e) {
+  const select = e.target.closest('.flavor-select');
+  if (!select) return;
+  const id = select.dataset.flavorFor;
+  const entry = getEntry(id);
+  entry.flavor = select.value;
+  select.classList.remove('is-invalid');
+  saveCart(cart);
+  renderOrderPanel();
+}
 
-        function onSaucePillClick(e) {
-        const pill = e.target.closest('.check-pill');
-        if (!pill) return;
-        e.preventDefault();
-        const wrap = pill.closest('.sauce-mode');
-        const id = wrap.dataset.sauceFor;
-        const mode = pill.dataset.pill;
-        const entry = getEntry(id);
-        entry.mode = mode;
-        saveCart(cart);
+function onSaucePillClick(e) {
+  const pill = e.target.closest('.check-pill');
+  if (!pill) return;
+  e.preventDefault();
+  const wrap = pill.closest('.sauce-mode');
+  const id = wrap.dataset.sauceFor;
+  const mode = pill.dataset.pill;
+  const entry = getEntry(id);
+  entry.mode = mode;
+  saveCart(cart);
 
-        wrap.querySelectorAll('.check-pill').forEach((p) => {
-        const isActive = p.dataset.pill === mode;
-        p.classList.toggle('is-active', isActive);
-        p.querySelector('input').checked = isActive;
-        });
+  wrap.querySelectorAll('.check-pill').forEach((p) => {
+    const isActive = p.dataset.pill === mode;
+    p.classList.toggle('is-active', isActive);
+    p.querySelector('input').checked = isActive;
+  });
 
-        renderOrderPanel();
-        }
+  renderOrderPanel();
+}
 
-        function syncQtyDisplays() {
-        document.querySelectorAll('[data-qty]').forEach((el) => {
-        const id = el.getAttribute('data-qty');
-        el.textContent = (cart[id] && cart[id].qty) || 0;
-        });
-        }
+function syncQtyDisplays() {
+  document.querySelectorAll('[data-qty]').forEach((el) => {
+    const id = el.getAttribute('data-qty');
+    el.textContent = (cart[id] && cart[id].qty) || 0;
+  });
+}
 
-        /* ==========================================================================
-        Panel de pedido
-        ========================================================================== */
-        function cartTotal() {
-        const items = allItemsById();
-        return Object.entries(cart).reduce((sum, [id, entry]) => {
-        const item = items[id];
-        return item ? sum + item.price * entry.qty : sum;
-        }, 0);
-        }
+/* ==========================================================================
+   Panel de pedido
+   ========================================================================== */
+function cartTotal() {
+  const items = allItemsById();
+  return Object.entries(cart).reduce((sum, [id, entry]) => {
+    const item = items[id];
+    return item ? sum + item.price * entry.qty : sum;
+  }, 0);
+}
 
-        function cartCount() {
-        return Object.values(cart).reduce((sum, entry) => sum + entry.qty, 0);
-        }
+function cartCount() {
+  return Object.values(cart).reduce((sum, entry) => sum + entry.qty, 0);
+}
 
-        function isMenuItem(id) {
-        return MENU_ITEMS.some((i) => i.id === id);
-        }
+function isMenuItem(id) {
+  return MENU_ITEMS.some((i) => i.id === id);
+}
 
-        function cartValidation() {
-        const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
-        const missing = entries.filter(([, entry]) => !entry.flavor);
-        return { valid: missing.length === 0 && entries.length > 0, missing };
-        }
+function cartValidation() {
+  const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
+  const missing = entries.filter(([, entry]) => !entry.flavor);
+  return { valid: missing.length === 0 && entries.length > 0, missing };
+}
 
-        function renderOrderPanel() {
-        const container = document.getElementById('orderItems');
-        const totalEl = document.getElementById('orderTotal');
-        if (!container || !totalEl) return;
+function renderOrderPanel() {
+  const container = document.getElementById('orderItems');
+  const totalEl = document.getElementById('orderTotal');
+  if (!container || !totalEl) return;
 
-        const items = allItemsById();
-        const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
+  const items = allItemsById();
+  const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
 
-        if (entries.length === 0) {
-        container.innerHTML = '<p class="order-empty" id="orderEmpty">Aún no agregaste combos. Ve al menú y elige tus favoritos 🍗</p>';
-        } else {
-        container.innerHTML = entries.map(([id, entry]) => {
-        const item = items[id];
-        if (!item) return '';
-        const flavorLabel = entry.flavor || '<span style="color:var(--color-primary-light)">Falta elegir sabor</span>';
-        const modeLabel = isMenuItem(id) ? ` · ${entry.mode === 'aparte' ? 'Salsa aparte' : 'Bañado'}` : '';
-        return `
+  if (entries.length === 0) {
+    container.innerHTML = '<p class="order-empty" id="orderEmpty">Aún no agregaste combos. Ve al menú y elige tus favoritos 🍗</p>';
+  } else {
+    container.innerHTML = entries.map(([id, entry]) => {
+      const item = items[id];
+      if (!item) return '';
+      const flavorLabel = entry.flavor || '<span style="color:var(--color-primary-light)">Falta elegir sabor</span>';
+      const modeLabel = isMenuItem(id) ? ` · ${entry.mode === 'aparte' ? 'Salsa aparte' : 'Bañado'}` : '';
+      return `
         <div class="order-item">
-        <div>
-        <p class="order-item-name">${item.name}</p>
-        <p class="order-item-sub">${flavorLabel}${modeLabel}</p>
+          <div>
+            <p class="order-item-name">${item.name}</p>
+            <p class="order-item-sub">${flavorLabel}${modeLabel}</p>
+          </div>
+          <div class="order-item-right">
+            <div class="qty-control" data-id="${id}" style="width:104px;">
+              <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar uno">–</button>
+              <span class="qty-value" data-qty="${id}">${entry.qty}</span>
+              <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar uno">+</button>
+            </div>
+            <span class="order-item-price">${formatBs(item.price * entry.qty)}</span>
+          </div>
         </div>
-        <div class="order-item-right">
-        <div class="qty-control" data-id="${id}" style="width:104px;">
-        <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar uno">–</button>
-        <span class="qty-value" data-qty="${id}">${entry.qty}</span>
-        <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar uno">+</button>
-        </div>
-        <span class="order-item-price">${formatBs(item.price * entry.qty)}</span>
-        </div>
-        </div>
-        `;
-        }).join('');
-        }
+      `;
+    }).join('');
+  }
 
-        totalEl.textContent = formatBs(cartTotal());
-        updateOrderLinks();
-        }
+  totalEl.textContent = formatBs(cartTotal());
+  updateOrderLinks();
+}
 
-        function updateCartBadge() {
-        const count = cartCount();
-        const badge = document.getElementById('cartBadge');
-        if (badge) {
-        if (count > 0) {
-        badge.hidden = false;
-        badge.textContent = String(count);
-        } else {
-        badge.hidden = true;
-        }
-        }
-        const ctaBadge = document.getElementById('orderCtaBadge');
-        if (ctaBadge) {
-        if (count > 0) {
-        ctaBadge.hidden = false;
-        ctaBadge.textContent = String(count);
-        } else {
-        ctaBadge.hidden = true;
-        }
-        }
-        }
+function updateCartBadge() {
+  const count = cartCount();
+  const badge = document.getElementById('cartBadge');
+  if (badge) {
+    if (count > 0) {
+      badge.hidden = false;
+      badge.textContent = String(count);
+    } else {
+      badge.hidden = true;
+    }
+  }
+  const ctaBadge = document.getElementById('orderCtaBadge');
+  if (ctaBadge) {
+    if (count > 0) {
+      ctaBadge.hidden = false;
+      ctaBadge.textContent = String(count);
+    } else {
+      ctaBadge.hidden = true;
+    }
+  }
+}
 
-        function buildOrderMessage() {
-        const items = allItemsById();
-        const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
-        const deliverySelect = document.getElementById('deliveryMode');
-        const delivery = deliverySelect ? deliverySelect.value : 'A domicilio';
+function buildOrderMessage() {
+  const items = allItemsById();
+  const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
+  const deliverySelect = document.getElementById('deliveryMode');
+  const delivery = deliverySelect ? deliverySelect.value : 'A domicilio';
 
-        let lines = [baseGreeting(), ''];
+  let lines = [baseGreeting(), ''];
 
-        if (entries.length === 0) {
-        lines.push('Quisiera más información sobre el menú.');
-        } else {
-        lines.push('Mi pedido:');
-        entries.forEach(([id, entry]) => {
-        const item = items[id];
-        if (!item) return;
-        const flavorTxt = entry.flavor ? ` — Sabor: ${entry.flavor}` : '';
-        const modeTxt = isMenuItem(id) ? ` (${entry.mode === 'aparte' ? 'salsa aparte' : 'bañado'})` : '';
-        lines.push(`• ${entry.qty}x ${item.name}${flavorTxt}${modeTxt} — ${formatBs(item.price * entry.qty)}`);
-        });
-        lines.push('');
-        lines.push(`Modalidad: ${delivery}`);
-        lines.push(`Total: ${formatBs(cartTotal())}`);
-        }
+  if (entries.length === 0) {
+    lines.push('Quisiera más información sobre el menú.');
+  } else {
+    lines.push('Mi pedido:');
+    entries.forEach(([id, entry]) => {
+      const item = items[id];
+      if (!item) return;
+      const flavorTxt = entry.flavor ? ` — Sabor: ${entry.flavor}` : '';
+      const modeTxt = isMenuItem(id) ? ` (${entry.mode === 'aparte' ? 'salsa aparte' : 'bañado'})` : '';
+      lines.push(`• ${entry.qty}x ${item.name}${flavorTxt}${modeTxt} — ${formatBs(item.price * entry.qty)}`);
+    });
+    lines.push('');
+    lines.push(`Modalidad: ${delivery}`);
+    lines.push(`Total: ${formatBs(cartTotal())}`);
+  }
 
-        return lines.join('\n');
-        }
+  return lines.join('\n');
+}
 
-        function updateOrderLinks() {
-        const url = buildWhatsappUrl(buildOrderMessage());
-        const sendBtn = document.getElementById('orderSend');
-        if (sendBtn) sendBtn.href = url;
-        }
+function updateOrderLinks() {
+  const url = buildWhatsappUrl(buildOrderMessage());
+  const sendBtn = document.getElementById('orderSend');
+  if (sendBtn) sendBtn.href = url;
+}
 
-        function setSimpleWhatsappLinks() {
-        const url = buildWhatsappUrl(baseGreeting());
-        ['navWhatsapp', 'heroWhatsapp', 'footerWhatsapp', 'floatingWhatsapp'].forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.href = url;
-        });
-        }
+function setSimpleWhatsappLinks() {
+  const url = buildWhatsappUrl(baseGreeting());
+  ['navWhatsapp', 'heroWhatsapp', 'footerWhatsapp', 'floatingWhatsapp'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.href = url;
+  });
+}
 
-        /* ==========================================================================
-        Panel deslizante de pedido
-        ========================================================================== */
-        function initOrderPanel() {
-        const panel = document.getElementById('orderPanel');
-        const backdrop = document.getElementById('orderBackdrop');
-        const floatingBtn = document.getElementById('floatingWhatsapp');
-        const openOrderBtn = document.getElementById('openOrderBtn');
-        const closeBtn = document.getElementById('orderClose');
-        const clearBtn = document.getElementById('orderClear');
-        const deliverySelect = document.getElementById('deliveryMode');
-        const sendBtn = document.getElementById('orderSend');
-        const warning = document.getElementById('orderWarning');
+/* ==========================================================================
+   Panel deslizante de pedido
+   ========================================================================== */
+function initOrderPanel() {
+  const panel = document.getElementById('orderPanel');
+  const backdrop = document.getElementById('orderBackdrop');
+  const floatingBtn = document.getElementById('floatingWhatsapp');
+  const openOrderBtn = document.getElementById('openOrderBtn');
+  const closeBtn = document.getElementById('orderClose');
+  const clearBtn = document.getElementById('orderClear');
+  const deliverySelect = document.getElementById('deliveryMode');
+  const sendBtn = document.getElementById('orderSend');
+  const warning = document.getElementById('orderWarning');
 
-        function openPanel(e) {
-        if (cartCount() === 0) return;
-        e.preventDefault();
-        panel.classList.add('is-open');
-        backdrop.classList.add('is-visible');
-        panel.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        }
+  function openPanel(e) {
+    if (cartCount() === 0) return;
+    e.preventDefault();
+    panel.classList.add('is-open');
+    backdrop.classList.add('is-visible');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
 
-        function openPanelAlways(e) {
-        e.preventDefault();
-        panel.classList.add('is-open');
-        backdrop.classList.add('is-visible');
-        panel.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        }
+  function openPanelAlways(e) {
+    e.preventDefault();
+    panel.classList.add('is-open');
+    backdrop.classList.add('is-visible');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
 
-        function closePanel() {
-        panel.classList.remove('is-open');
-        backdrop.classList.remove('is-visible');
-        panel.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        }
+  function closePanel() {
+    panel.classList.remove('is-open');
+    backdrop.classList.remove('is-visible');
+    panel.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
-        floatingBtn && floatingBtn.addEventListener('click', openPanel);
-        openOrderBtn && openOrderBtn.addEventListener('click', openPanelAlways);
-        closeBtn && closeBtn.addEventListener('click', closePanel);
-        backdrop && backdrop.addEventListener('click', closePanel);
-        document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closePanel();
-        });
+  floatingBtn && floatingBtn.addEventListener('click', openPanel);
+  openOrderBtn && openOrderBtn.addEventListener('click', openPanelAlways);
+  closeBtn && closeBtn.addEventListener('click', closePanel);
+  backdrop && backdrop.addEventListener('click', closePanel);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePanel();
+  });
 
-        panel && panel.addEventListener('click', (e) => {
-        const btn = e.target.closest('.qty-btn');
-        if (!btn) return;
-        const wrap = btn.closest('.qty-control');
-        const id = wrap.dataset.id;
-        const entry = getEntry(id);
-        if (btn.dataset.action === 'inc') {
-        entry.qty = Math.min(entry.qty + 1, 99);
-        } else {
-        entry.qty = Math.max(entry.qty - 1, 0);
-        if (entry.qty === 0) delete cart[id];
-        }
-        saveCart(cart);
-        syncQtyDisplays();
-        renderOrderPanel();
-        updateCartBadge();
-        });
+  panel && panel.addEventListener('click', (e) => {
+    const btn = e.target.closest('.qty-btn');
+    if (!btn) return;
+    const wrap = btn.closest('.qty-control');
+    const id = wrap.dataset.id;
+    const entry = getEntry(id);
+    if (btn.dataset.action === 'inc') {
+      entry.qty = Math.min(entry.qty + 1, 99);
+    } else {
+      entry.qty = Math.max(entry.qty - 1, 0);
+      if (entry.qty === 0) delete cart[id];
+    }
+    saveCart(cart);
+    syncQtyDisplays();
+    renderOrderPanel();
+    updateCartBadge();
+  });
 
-        clearBtn && clearBtn.addEventListener('click', () => {
-        cart = {};
-        saveCart(cart);
-        syncQtyDisplays();
-        renderOrderPanel();
-        updateCartBadge();
-        warning && (warning.hidden = true);
-        });
+  clearBtn && clearBtn.addEventListener('click', () => {
+    cart = {};
+    saveCart(cart);
+    syncQtyDisplays();
+    renderOrderPanel();
+    updateCartBadge();
+    warning && (warning.hidden = true);
+  });
 
-        deliverySelect && deliverySelect.addEventListener('change', updateOrderLinks);
+  deliverySelect && deliverySelect.addEventListener('change', updateOrderLinks);
 
-        sendBtn && sendBtn.addEventListener('click', (e) => {
-        const { valid, missing } = cartValidation();
-        if (!valid) {
-        e.preventDefault();
-        warning.hidden = false;
-        warning.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        // Resalta los selects de sabor que faltan
-        missing.forEach(([id]) => {
+  sendBtn && sendBtn.addEventListener('click', (e) => {
+    const { valid, missing } = cartValidation();
+    if (!valid) {
+      e.preventDefault();
+      warning.hidden = false;
+      warning.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      // Resalta los selects de sabor que faltan
+      missing.forEach(([id]) => {
         const select = document.querySelector(`.flavor-select[data-flavor-for="${id}"]`);
         if (select) select.classList.add('is-invalid');
-        });
-        } else {
-        warning.hidden = true;
-        }
-        });
-        }
+      });
+    } else {
+      warning.hidden = true;
+    }
+  });
+}
 
-        /* ==========================================================================
-        Navegación móvil
-        ========================================================================== */
-        function initNav() {
-        const toggle = document.getElementById('navToggle');
-        const nav = document.getElementById('mainNav');
-        const backdrop = document.getElementById('navBackdrop');
-        const closeBtn = document.getElementById('navClose');
-        const links = nav ? nav.querySelectorAll('.nav-link') : [];
+/* ==========================================================================
+   Navegación móvil
+   ========================================================================== */
+function initNav() {
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  const backdrop = document.getElementById('navBackdrop');
+  const closeBtn = document.getElementById('navClose');
+  const links = nav ? nav.querySelectorAll('.nav-link') : [];
 
-        function openNav() {
-        nav.classList.add('is-open');
-        backdrop.classList.add('is-visible');
-        toggle.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-        }
-        function closeNav() {
-        nav.classList.remove('is-open');
-        backdrop.classList.remove('is-visible');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-        }
+  function openNav() {
+    nav.classList.add('is-open');
+    backdrop.classList.add('is-visible');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    nav.classList.remove('is-open');
+    backdrop.classList.remove('is-visible');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
 
-        toggle && toggle.addEventListener('click', () => {
-        const isOpen = nav.classList.contains('is-open');
-        isOpen ? closeNav() : openNav();
-        });
-        closeBtn && closeBtn.addEventListener('click', closeNav);
-        backdrop && backdrop.addEventListener('click', closeNav);
-        links.forEach((l) => l.addEventListener('click', closeNav));
+  toggle && toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('is-open');
+    isOpen ? closeNav() : openNav();
+  });
+  closeBtn && closeBtn.addEventListener('click', closeNav);
+  backdrop && backdrop.addEventListener('click', closeNav);
+  links.forEach((l) => l.addEventListener('click', closeNav));
 
-        const header = document.getElementById('siteHeader');
-        function onScroll() {
-        if (window.scrollY > 12) header.classList.add('is-scrolled');
-        else header.classList.remove('is-scrolled');
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
+  const header = document.getElementById('siteHeader');
+  function onScroll() {
+    if (window.scrollY > 12) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-        const sections = document.querySelectorAll('main section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const spy = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
         navLinks.forEach((l) => {
-        l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`);
+          l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`);
         });
-        }
-        });
-        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-        sections.forEach((s) => spy.observe(s));
-        }
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  sections.forEach((s) => spy.observe(s));
+}
 
-        /* ==========================================================================
-        Animaciones de aparición al hacer scroll
-        ========================================================================== */
-        function initReveal() {
-        const items = document.querySelectorAll('.reveal');
-        if (!('IntersectionObserver' in window) || items.length === 0) {
-        items.forEach((el) => el.classList.add('is-visible'));
-        return;
-        }
-        const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+/* ==========================================================================
+   Animaciones de aparición al hacer scroll
+   ========================================================================== */
+function initReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || items.length === 0) {
+    items.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
-        }
-        });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        items.forEach((el, i) => {
-        el.style.transitionDelay = `${Math.min(i % 6, 5) * 60}ms`;
-        observer.observe(el);
-        });
-        }
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach((el, i) => {
+    el.style.transitionDelay = `${Math.min(i % 6, 5) * 60}ms`;
+    observer.observe(el);
+  });
+}
 
-        function initYear() {
-        const el = document.getElementById('year');
-        if (el) el.textContent = new Date().getFullYear();
-        }
+function initYear() {
+  const el = document.getElementById('year');
+  if (el) el.textContent = new Date().getFullYear();
+}
 
-        /* ==========================================================================
-        Init
-        ========================================================================== */
-        document.addEventListener('DOMContentLoaded', () => {
-        renderMenu();
-        renderOrderPanel();
-        updateCartBadge();
-        setSimpleWhatsappLinks();
-        initOrderPanel();
-        initNav();
-        initReveal();
-        initYear();
-        });
+/* ==========================================================================
+   Init
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  renderMenu();
+  renderOrderPanel();
+  updateCartBadge();
+  setSimpleWhatsappLinks();
+  initOrderPanel();
+  initNav();
+  initReveal();
+  initYear();
+});
 
-    </script>
+</script>
 </body>
 </html>
