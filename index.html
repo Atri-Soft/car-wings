@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Car Wings | El Único Sabor — Alitas en Quillacollo</title>
-<meta name="description" content="Car Wings — Restaurante de alitas en Quillacollo, Bolivia. Sabores Barbacoa Miel y Mostaza y Picante Crocante. Pide por WhatsApp. El Único Sabor.">
+<meta name="description" content="Car Wings — Restaurante de alitas en Quillacollo, Bolivia. Sabores Barbacoa, Miel y Mostaza y Picante. Pide por WhatsApp. El Único Sabor.">
 <meta name="theme-color" content="#0B0B0D">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Car Wings | El Único Sabor">
-<meta property="og:description" content="Alitas Barbacoa Miel y Mostaza y Picante Crocante. Pide ya por WhatsApp — Quillacollo, Bolivia.">
+<meta property="og:description" content="Alitas Barbacoa, Miel y Mostaza y Picante. Pide ya por WhatsApp — Quillacollo, Bolivia.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://i.imgur.com/tzRZQLo.jpeg">
 <meta property="og:locale" content="es_BO">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkY0NzU3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0E1MTQxRSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwQjBCMEQiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyNCIgZmlsbD0idXJsKCNnKSIvPgogIDxwYXRoIGQ9Ik0zMiAxNmMtNiA2LTYgMTAtMiAxNC0zIDEtNSA0LTUgOCAwIDUgNC41IDkgOSA5czktNCA5LTljMC00LTItNy01LTggNC00IDQtOC0yLTE0LTEgMy0yIDQtNCA0cy0zLTEtNC00eiIgZmlsbD0iIzBCMEIwRCIvPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzgiIHI9IjMiIGZpbGw9IiNENEFGMzciLz4KPC9zdmc+Cg==">
+<link rel="icon" type="image/jpeg" href="https://i.imgur.com/tzRZQLo.jpeg">
+<link rel="apple-touch-icon" href="https://i.imgur.com/tzRZQLo.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
@@ -252,6 +254,24 @@ body {
 .brand-text em { font-style: normal; color: var(--color-primary-light); }
 .brand-text--footer { font-size: 1.8rem; }
 
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 0 1px rgba(212,175,55,.2), 0 4px 14px rgba(0,0,0,.4);
+  flex-shrink: 0;
+}
+.brand-logo--footer { width: 56px; height: 56px; }
+
+.footer-brand-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -340,6 +360,23 @@ body {
   pointer-events: none;
 }
 
+.hero-logo-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(1100px, 130vw);
+  height: min(1100px, 130vw);
+  transform: translate(-50%, -50%);
+  background-image: url('https://i.imgur.com/tzRZQLo.jpeg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: .16;
+  filter: blur(22px) saturate(115%);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .hero-flag {
   position: absolute;
   left: 0; right: 0;
@@ -379,6 +416,32 @@ body {
   color: var(--color-gold-light);
   font-size: 1rem;
   margin-top: var(--space-3);
+}
+
+.hero-wings-deco {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.hero-wings-deco .wing {
+  width: 46px;
+  height: auto;
+  color: var(--color-gold);
+  opacity: .85;
+  flex-shrink: 0;
+}
+.hero-wings-deco .wing-right { transform: scaleX(-1); }
+.hero-wings-slogan {
+  font-family: var(--font-display);
+  letter-spacing: .28em;
+  color: var(--color-gold-light);
+  font-size: .95rem;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .hero-wings-deco .wing { width: 30px; }
+  .hero-wings-slogan { font-size: .75rem; letter-spacing: .18em; }
 }
 
 .hero-desc {
@@ -427,7 +490,7 @@ body {
 .flavors { padding: var(--space-8) 0; background: var(--color-bg-alt); }
 .flavors-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
 }
 .flavor-card {
@@ -446,6 +509,7 @@ body {
 }
 .flavor-icon svg { width: 28px; height: 28px; }
 .flavor-icon--bbq { background: rgba(212,175,55,.14); color: var(--color-gold-light); }
+.flavor-icon--honey { background: rgba(236,210,122,.16); color: #f0d98c; }
 .flavor-icon--spicy { background: rgba(208,31,43,.16); color: var(--color-primary-light); }
 .flavor-card h3 { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: .02em; margin-bottom: var(--space-2); }
 .flavor-card p { color: var(--color-text-muted); font-size: .96rem; }
@@ -511,6 +575,55 @@ body {
 }
 .menu-card-price span { font-family: var(--font-body); font-size: .85rem; color: var(--color-text-muted); font-weight: 600; }
 
+.field-label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--color-text-faint);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.flavor-select {
+  width: 100%;
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 11px 12px;
+  color: var(--color-text);
+  min-height: 44px;
+  transition: border-color var(--transition-fast);
+}
+.flavor-select.is-invalid { border-color: var(--color-primary-light); }
+
+.sauce-mode {
+  display: flex;
+  gap: var(--space-2);
+}
+.check-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 6px;
+  font-size: .76rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+  user-select: none;
+}
+.check-pill input { position: absolute; opacity: 0; width: 0; height: 0; }
+.check-pill.is-active {
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+  background: rgba(212,175,55,.1);
+}
+
 .qty-control {
   display: flex;
   align-items: center;
@@ -537,8 +650,14 @@ body {
   font-family: var(--font-display);
   font-size: 1.6rem;
   text-align: center;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-2);
   letter-spacing: .02em;
+}
+.extras-sub {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: .9rem;
+  margin-bottom: var(--space-5);
 }
 .extras-grid {
   display: grid;
@@ -549,16 +668,19 @@ body {
 }
 .extra-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--space-3);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-4) var(--space-5);
 }
+.extra-card-top { display: flex; align-items: center; justify-content: space-between; }
 .extra-card-name { font-weight: 700; }
 .extra-card-price { color: var(--color-gold-light); font-weight: 700; margin-top: 2px; font-size: .88rem; }
-.extra-card .qty-control { width: 118px; }
+.extra-card-bottom { display: flex; align-items: center; gap: var(--space-3); }
+.extra-card-bottom .flavor-select { flex: 1; }
+.extra-card .qty-control { width: 118px; flex-shrink: 0; }
 .extra-card .qty-btn { width: 32px; height: 32px; font-size: 1rem; }
 
 .menu-note {
@@ -626,6 +748,17 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(10,10,12,.85) 78%);
+}
+.about-logo {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--color-gold);
+  box-shadow: 0 0 0 6px rgba(10,10,12,.6), 0 20px 50px rgba(0,0,0,.5);
 }
 .about-badge {
   position: absolute;
@@ -825,6 +958,15 @@ body {
   color: var(--color-text);
   min-height: 44px;
 }
+.order-warning {
+  color: var(--color-primary-light);
+  font-size: .82rem;
+  text-align: center;
+  background: rgba(208,31,43,.1);
+  border: 1px solid rgba(208,31,43,.3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
 .order-total {
   display: flex; justify-content: space-between; align-items: center;
   font-size: 1.1rem;
@@ -845,6 +987,7 @@ body {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
+  .flavors-inner { grid-template-columns: repeat(2, 1fr); }
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
   .about-visual { max-width: 420px; margin-inline: auto; order: -1; }
@@ -897,19 +1040,13 @@ body {
 </head>
 <body>
 
-<!-- Skip link for accessibility -->
 <a class="skip-link" href="#main">Saltar al contenido</a>
 
 <!-- ================= HEADER / NAV ================= -->
 <header class="site-header" id="siteHeader">
   <div class="container nav-inner">
     <a href="#inicio" class="brand" aria-label="Car Wings - Inicio">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" width="34" height="34">
-          <circle cx="32" cy="32" r="30" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
-          <path d="M32 16c-6 6-6 10-2 14-3 1-5 4-5 8 0 5 4.5 9 9 9s9-4 9-9c0-4-2-7-5-8 4-4 4-8-2-14-1 3-2 4-4 4s-3-1-4-4z" fill="var(--color-primary-light)"/>
-        </svg>
-      </span>
+      <img class="brand-logo" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings" width="40" height="40">
       <span class="brand-text">CAR <em>WINGS</em></span>
     </a>
 
@@ -943,6 +1080,7 @@ body {
   <section class="hero" id="inicio">
     <div class="hero-flag hero-flag--top" aria-hidden="true"></div>
     <div class="hero-flag hero-flag--bottom" aria-hidden="true"></div>
+    <div class="hero-logo-bg" aria-hidden="true"></div>
     <div class="hero-glow" aria-hidden="true"></div>
 
     <div class="container hero-inner">
@@ -951,8 +1089,14 @@ body {
         <span class="hero-title-line">CAR</span>
         <span class="hero-title-line hero-title-accent">WINGS</span>
       </h1>
-      <p class="hero-slogan reveal">— El Único Sabor —</p>
-      <p class="hero-desc reveal">Alitas crujientes bañadas en <strong>Barbacoa Miel y Mostaza</strong> o <strong>Picante Crocante</strong>. Directo a la parrilla, directo a tu mesa.</p>
+
+      <div class="hero-wings-deco reveal" aria-hidden="true">
+        <svg viewBox="0 0 48 30" class="wing wing-left"><path d="M46 4C36 2 26 4 20 12c6-2 12-2 16 2-6 0-11 2-14 6 5-.5 9 .5 11 4-8 1-15-1-19-7-2 6 0 11 5 14C9 29 2 22 1 13 0 5 8-1 18 1c9 2 20 1 28 3Z" fill="currentColor"/></svg>
+        <span class="hero-wings-slogan">— El Único Sabor —</span>
+        <svg viewBox="0 0 48 30" class="wing wing-right"><path d="M2 4C12 2 22 4 28 12c-6-2-12-2-16 2 6 0 11 2 14 6-5-.5-9 .5-11 4 8 1 15-1 19-7 2 6 0 11-5 14 9-2 16-9 17-18 1-8-7-14-17-12-9 2-20 1-28 3Z" fill="currentColor"/></svg>
+      </div>
+
+      <p class="hero-desc reveal">Alitas crujientes bañadas en <strong>Barbacoa</strong>, <strong>Miel y Mostaza</strong> o <strong>Picante</strong>. Directo a la parrilla, directo a tu mesa.</p>
 
       <div class="hero-actions reveal">
         <a href="#menu" class="btn btn-primary">
@@ -987,16 +1131,23 @@ body {
     <div class="container flavors-inner">
       <div class="flavor-card reveal">
         <div class="flavor-icon flavor-icon--bbq" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 3c-2.5 2.5-2.5 4.2-.8 6-1.3.4-2.2 1.7-2.2 3.3A3.1 3.1 0 0 0 12 15.4a3.1 3.1 0 0 0 3-3.1c0-1.6-.9-2.9-2.2-3.3 1.7-1.8 1.7-3.5-.8-6Z" fill="currentColor"/><path d="M6 20c1-2 2-3 6-3s5 1 6 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M8 21c-1-3 .5-5 2-6-1 2 0 3 1 3.5-.3-2 .5-3.5 2-4.5-.5 2 .5 3 1.5 3.5.8-1.5 0-3.5-1-5 2 .5 4 2.5 4.2 5.5.2 2-1.2 3.8-3.2 4-1.5.2-3-.3-4-1.5-1-1.2-1.7-2.5-2.5 1Z" fill="currentColor"/><path d="M6 21h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
         </div>
-        <h3>Barbacoa Miel y Mostaza</h3>
-        <p>Dulce, ahumado y con un toque tangy que se abraza a cada alita.</p>
+        <h3>Barbacoa</h3>
+        <p>Ahumada, intensa y con ese toque dulce de parrilla que se pega a la alita.</p>
+      </div>
+      <div class="flavor-card reveal">
+        <div class="flavor-icon flavor-icon--honey" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3c1.8 2.4 3 4.6 3 6.8a3 3 0 0 1-6 0C9 7.6 10.2 5.4 12 3Z" fill="currentColor"/><path d="M7 21c0-3 2-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M9 21h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Miel y Mostaza</h3>
+        <p>Dulce y con un toque tangy que equilibra perfecto lo crocante del empanizado.</p>
       </div>
       <div class="flavor-card reveal">
         <div class="flavor-icon flavor-icon--spicy" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M4 12c3-4 7-6 12-5 2 .4 4 1.6 4 3.5S18.5 14 16 13.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M4 12c0 3 2.5 6 6 6 3 0 5-2 5-4.4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
         </div>
-        <h3>Picante Crocante</h3>
+        <h3>Picante</h3>
         <p>Empanizado extra crujiente con un picor que sube de a poco. El favorito de la casa.</p>
       </div>
     </div>
@@ -1007,16 +1158,17 @@ body {
     <div class="container">
       <p class="eyebrow eyebrow--center reveal">Nuestro menú</p>
       <h2 class="section-title reveal">Combos de Alitas</h2>
-      <p class="section-sub reveal">Elige tu combo, tu sabor favorito y arma tu pedido. Te lo mandamos directo por WhatsApp.</p>
+      <p class="section-sub reveal">Elige tu combo, su sabor y cómo lo quieres. Te lo mandamos directo por WhatsApp.</p>
 
       <div class="menu-grid" id="menuGrid" role="list"></div>
 
       <div class="extras reveal">
         <h3 class="extras-title">Salsas extra</h3>
+        <p class="extras-sub">Elige el sabor de tu salsa extra.</p>
         <div class="extras-grid" id="extrasGrid" role="list"></div>
       </div>
 
-      <p class="menu-note reveal">* Todos los combos incluyen porción(es) de papa. Elige el sabor de tu preferencia al pedir.</p>
+      <p class="menu-note reveal">* Todos los combos incluyen porción(es) de papa.</p>
     </div>
   </section>
 
@@ -1026,15 +1178,15 @@ body {
       <div class="about-copy reveal">
         <p class="eyebrow">Nosotros</p>
         <h2 class="section-title section-title--left">El Único Sabor</h2>
-        <p>Car Wings es un restaurante de comida rápida en Quillacollo especializado en alitas de pollo. Combinamos velocidad de parrilla con el sabor de casa: crocantes por fuera, jugosas por dentro, bañadas en dos salsas que se pelean por ser tu favorita.</p>
+        <p>Car Wings es un restaurante de comida rápida en Quillacollo especializado en alitas de pollo. Combinamos velocidad de parrilla con el sabor de casa: crocantes por fuera, jugosas por dentro, bañadas en tres salsas que se pelean por ser tu favorita.</p>
         <p>Atendemos de <strong>lunes a sábado, de 16:00 a 22:00</strong>. Pedidos para recoger o coordinar entrega por WhatsApp.</p>
 
         <ul class="tag-list" aria-label="Etiquetas del restaurante">
           <li>#ElÚnicoSabor</li>
           <li>Alitas</li>
           <li>Barbacoa</li>
+          <li>Miel y Mostaza</li>
           <li>Picante</li>
-          <li>Miel Mostaza</li>
           <li>Crocante</li>
         </ul>
 
@@ -1050,8 +1202,9 @@ body {
         </div>
       </div>
 
-      <div class="about-visual reveal" aria-hidden="true">
+      <div class="about-visual reveal">
         <div class="about-flag"></div>
+        <img class="about-logo" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings">
         <div class="about-badge">
           <span class="about-badge-num">100%</span>
           <span class="about-badge-label">Sabor a la parrilla</span>
@@ -1118,7 +1271,10 @@ body {
 <footer class="site-footer" id="contacto">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <span class="brand-text brand-text--footer">CAR <em>WINGS</em></span>
+      <div class="footer-brand-head">
+        <img class="brand-logo brand-logo--footer" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings" width="56" height="56">
+        <span class="brand-text brand-text--footer">CAR <em>WINGS</em></span>
+      </div>
       <p>El Único Sabor. Alitas de comida rápida en Quillacollo, Bolivia.</p>
       <a href="#" id="footerWhatsapp" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.13A8.9 8.9 0 0 0 11.9 21.4h.01A8.94 8.94 0 0 0 20.9 12.5a8.86 8.86 0 0 0-3.3-6.18Zm-5.7 13.6h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.68.68-2.18-.18-.28a7.44 7.44 0 0 1 11.5-9.24 7.36 7.36 0 0 1 2.17 5.24 7.44 7.44 0 0 1-7.87 6.98Zm4.08-5.56c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.05 6.05 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
@@ -1137,7 +1293,7 @@ body {
     <div class="footer-col">
       <h4>Contacto</h4>
       <a href="mailto:carwingsbolivia@gmail.com">carwingsbolivia@gmail.com</a>
-      <a href="https://atri-soft.github.io/car-wings" target="_blank" rel="noopener">Nuestra pagina oficial</a>
+      <a href="https://atri-soft.github.io/car-wings" target="_blank" rel="noopener">Nuestra página oficial</a>
       <a href="https://www.facebook.com/share/1JDJpFFr2U/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook · Car Wings</a>
     </div>
 
@@ -1173,12 +1329,12 @@ body {
     <p class="order-empty" id="orderEmpty">Aún no agregaste combos. Ve al menú y elige tus favoritos 🍗</p>
   </div>
   <div class="order-footer">
+    <p class="order-warning" id="orderWarning" hidden>⚠️ Selecciona el sabor de todos tus combos y salsas antes de enviar el pedido.</p>
     <div class="order-flavor">
-      <label for="flavorSelect">Sabor preferido</label>
-      <select id="flavorSelect">
-        <option value="Barbacoa Miel y Mostaza">Barbacoa Miel y Mostaza</option>
-        <option value="Picante Crocante">Picante Crocante</option>
-        <option value="Mitad y mitad">Mitad y mitad</option>
+      <label for="deliveryMode">Modalidad</label>
+      <select id="deliveryMode">
+        <option value="Para recoger en el local">Para recoger en el local</option>
+        <option value="A domicilio">A domicilio</option>
       </select>
     </div>
     <div class="order-total">
@@ -1201,45 +1357,17 @@ body {
    Edita SOLO esta sección con los datos reales del restaurante.
    ========================================================================== */
 const CONFIG = {
-  // ⚠️ IMPORTANTE: reemplaza este número por el WhatsApp real de Car Wings.
-  // Formato: código de país + número, SIN espacios, signos ni el símbolo "+".
-  // Ejemplo Bolivia: 591 + número de 8 dígitos => "59170000000"
   whatsappNumber: '59160778773',
-
   businessName: 'Car Wings',
-  address: 'Av. Cochabamba 0855, Quillacollo, Bolivia',
 };
 
+const FLAVORS = ['Barbacoa', 'Miel y Mostaza', 'Picante'];
+
 const MENU_ITEMS = [
-  {
-    id: 'combo4',
-    name: '4 Piezas + Papa',
-    desc: '4 alitas + 1 porción de papa',
-    price: 20,
-    icon: 'wing',
-  },
-  {
-    id: 'combo6',
-    name: '6 Piezas + Papa',
-    desc: '6 alitas + 1 porción de papa',
-    price: 30,
-    icon: 'wing',
-    popular: true,
-  },
-  {
-    id: 'combo14',
-    name: '14 Piezas + Papa',
-    desc: '14 alitas + 1 porción de papa',
-    price: 70,
-    icon: 'wing',
-  },
-  {
-    id: 'combo28',
-    name: '28 Piezas + 2 Papas',
-    desc: '28 alitas + 2 porciones de papa',
-    price: 130,
-    icon: 'wing',
-  },
+  { id: 'combo4', name: '4 Piezas + Papa', desc: '4 alitas + 1 porción de papa', price: 20 },
+  { id: 'combo6', name: '6 Piezas + Papa', desc: '6 alitas + 1 porción de papa', price: 30, popular: true },
+  { id: 'combo14', name: '14 Piezas + Papa', desc: '14 alitas + 1 porción de papa', price: 70 },
+  { id: 'combo28', name: '28 Piezas + 2 Papas', desc: '28 alitas + 2 porciones de papa', price: 130 },
 ];
 
 const EXTRA_ITEMS = [
@@ -1249,10 +1377,16 @@ const EXTRA_ITEMS = [
 
 const WING_ICON_SVG = `<svg viewBox="0 0 24 24"><path d="M12 3c-2.5 2.5-2.5 4.2-.8 6-1.3.4-2.2 1.7-2.2 3.3A3.1 3.1 0 0 0 12 15.4a3.1 3.1 0 0 0 3-3.1c0-1.6-.9-2.9-2.2-3.3 1.7-1.8 1.7-3.5-.8-6Z" fill="currentColor"/><path d="M6 20c1-2 2-3 6-3s5 1 6 3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>`;
 
+function flavorOptions(selected) {
+  return `<option value="">Selecciona sabor</option>` +
+    FLAVORS.map((f) => `<option value="${f}" ${f === selected ? 'selected' : ''}>${f}</option>`).join('');
+}
+
 /* ==========================================================================
-   Estado del carrito (persistido en localStorage)
+   Estado del carrito
+   cart[id] = { qty, flavor, mode }  ->  mode solo aplica a combos ('bañado' | 'aparte')
    ========================================================================== */
-const STORAGE_KEY = 'carwings_order_v1';
+const STORAGE_KEY = 'carwings_order_v2';
 
 function loadCart() {
   try {
@@ -1266,10 +1400,15 @@ function loadCart() {
 function saveCart(cart) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-  } catch (e) { /* almacenamiento no disponible, se ignora */ }
+  } catch (e) { /* almacenamiento no disponible */ }
 }
 
 let cart = loadCart();
+
+function getEntry(id) {
+  if (!cart[id]) cart[id] = { qty: 0, flavor: '', mode: 'bañado' };
+  return cart[id];
+}
 
 /* ==========================================================================
    Helpers
@@ -1287,6 +1426,13 @@ function baseGreeting() {
   return `Hola Car Wings 👋 Quisiera hacer un pedido.`;
 }
 
+function allItemsById() {
+  return [...MENU_ITEMS, ...EXTRA_ITEMS].reduce((acc, i) => {
+    acc[i.id] = i;
+    return acc;
+  }, {});
+}
+
 /* ==========================================================================
    Render del menú
    ========================================================================== */
@@ -1295,59 +1441,90 @@ function renderMenu() {
   const extrasGrid = document.getElementById('extrasGrid');
   if (!grid || !extrasGrid) return;
 
-  grid.innerHTML = MENU_ITEMS.map((item) => `
-    <article class="menu-card ${item.popular ? 'is-popular' : ''}" role="listitem">
+  grid.innerHTML = MENU_ITEMS.map((item) => {
+    const entry = getEntry(item.id);
+    return `
+    <article class="menu-card ${item.popular ? 'is-popular' : ''}" role="listitem" data-id="${item.id}">
       ${item.popular ? '<span class="menu-card-badge">Más pedido</span>' : ''}
       <div class="menu-card-icon" aria-hidden="true">${WING_ICON_SVG}</div>
       <h3>${item.name}</h3>
       <p class="menu-card-desc">${item.desc}</p>
       <p class="menu-card-price">${item.price} <span>Bs.</span></p>
+
+      <div class="menu-card-options">
+        <label class="field-label">Sabor</label>
+        <select class="flavor-select" data-flavor-for="${item.id}">
+          ${flavorOptions(entry.flavor)}
+        </select>
+
+        <label class="field-label">¿Cómo lo quieres?</label>
+        <div class="sauce-mode" data-sauce-for="${item.id}">
+          <label class="check-pill ${entry.mode === 'bañado' ? 'is-active' : ''}" data-pill="bañado">
+            <input type="checkbox" data-mode="bañado" ${entry.mode === 'bañado' ? 'checked' : ''}> Bañado
+          </label>
+          <label class="check-pill ${entry.mode === 'aparte' ? 'is-active' : ''}" data-pill="aparte">
+            <input type="checkbox" data-mode="aparte" ${entry.mode === 'aparte' ? 'checked' : ''}> Salsa aparte
+          </label>
+        </div>
+      </div>
+
       <div class="qty-control" data-id="${item.id}">
         <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar una unidad de ${item.name}">–</button>
-        <span class="qty-value" data-qty="${item.id}">0</span>
+        <span class="qty-value" data-qty="${item.id}">${entry.qty}</span>
         <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar una unidad de ${item.name}">+</button>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 
-  extrasGrid.innerHTML = EXTRA_ITEMS.map((item) => `
-    <div class="extra-card" role="listitem">
-      <div>
-        <p class="extra-card-name">${item.name}</p>
-        <p class="extra-card-price">${formatBs(item.price)}</p>
+  extrasGrid.innerHTML = EXTRA_ITEMS.map((item) => {
+    const entry = getEntry(item.id);
+    return `
+    <div class="extra-card" role="listitem" data-id="${item.id}">
+      <div class="extra-card-top">
+        <div>
+          <p class="extra-card-name">${item.name}</p>
+          <p class="extra-card-price">${formatBs(item.price)}</p>
+        </div>
       </div>
-      <div class="qty-control" data-id="${item.id}">
-        <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar una unidad de ${item.name}">–</button>
-        <span class="qty-value" data-qty="${item.id}">0</span>
-        <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar una unidad de ${item.name}">+</button>
+      <div class="extra-card-bottom">
+        <select class="flavor-select" data-flavor-for="${item.id}">
+          ${flavorOptions(entry.flavor)}
+        </select>
+        <div class="qty-control" data-id="${item.id}">
+          <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar una unidad de ${item.name}">–</button>
+          <span class="qty-value" data-qty="${item.id}">${entry.qty}</span>
+          <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar una unidad de ${item.name}">+</button>
+        </div>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   grid.addEventListener('click', onQtyClick);
   extrasGrid.addEventListener('click', onQtyClick);
+  grid.addEventListener('click', onSaucePillClick);
+  grid.addEventListener('change', onFlavorChange);
+  extrasGrid.addEventListener('change', onFlavorChange);
+
   syncQtyDisplays();
 }
 
-function allItemsById() {
-  return [...MENU_ITEMS, ...EXTRA_ITEMS].reduce((acc, i) => {
-    acc[i.id] = i;
-    return acc;
-  }, {});
-}
-
+/* ==========================================================================
+   Interacciones del menú
+   ========================================================================== */
 function onQtyClick(e) {
   const btn = e.target.closest('.qty-btn');
   if (!btn) return;
   const wrap = btn.closest('.qty-control');
   const id = wrap.dataset.id;
-  const current = cart[id] || 0;
+  const entry = getEntry(id);
 
   if (btn.dataset.action === 'inc') {
-    cart[id] = Math.min(current + 1, 99);
+    entry.qty = Math.min(entry.qty + 1, 99);
   } else {
-    cart[id] = Math.max(current - 1, 0);
-    if (cart[id] === 0) delete cart[id];
+    entry.qty = Math.max(entry.qty - 1, 0);
+    if (entry.qty === 0) delete cart[id];
   }
 
   saveCart(cart);
@@ -1356,10 +1533,41 @@ function onQtyClick(e) {
   updateCartBadge();
 }
 
+function onFlavorChange(e) {
+  const select = e.target.closest('.flavor-select');
+  if (!select) return;
+  const id = select.dataset.flavorFor;
+  const entry = getEntry(id);
+  entry.flavor = select.value;
+  select.classList.remove('is-invalid');
+  saveCart(cart);
+  renderOrderPanel();
+}
+
+function onSaucePillClick(e) {
+  const pill = e.target.closest('.check-pill');
+  if (!pill) return;
+  e.preventDefault();
+  const wrap = pill.closest('.sauce-mode');
+  const id = wrap.dataset.sauceFor;
+  const mode = pill.dataset.pill;
+  const entry = getEntry(id);
+  entry.mode = mode;
+  saveCart(cart);
+
+  wrap.querySelectorAll('.check-pill').forEach((p) => {
+    const isActive = p.dataset.pill === mode;
+    p.classList.toggle('is-active', isActive);
+    p.querySelector('input').checked = isActive;
+  });
+
+  renderOrderPanel();
+}
+
 function syncQtyDisplays() {
   document.querySelectorAll('[data-qty]').forEach((el) => {
     const id = el.getAttribute('data-qty');
-    el.textContent = cart[id] || 0;
+    el.textContent = (cart[id] && cart[id].qty) || 0;
   });
 }
 
@@ -1368,44 +1576,55 @@ function syncQtyDisplays() {
    ========================================================================== */
 function cartTotal() {
   const items = allItemsById();
-  return Object.entries(cart).reduce((sum, [id, qty]) => {
+  return Object.entries(cart).reduce((sum, [id, entry]) => {
     const item = items[id];
-    return item ? sum + item.price * qty : sum;
+    return item ? sum + item.price * entry.qty : sum;
   }, 0);
 }
 
 function cartCount() {
-  return Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+  return Object.values(cart).reduce((sum, entry) => sum + entry.qty, 0);
+}
+
+function isMenuItem(id) {
+  return MENU_ITEMS.some((i) => i.id === id);
+}
+
+function cartValidation() {
+  const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
+  const missing = entries.filter(([, entry]) => !entry.flavor);
+  return { valid: missing.length === 0 && entries.length > 0, missing };
 }
 
 function renderOrderPanel() {
   const container = document.getElementById('orderItems');
-  const emptyMsg = document.getElementById('orderEmpty');
   const totalEl = document.getElementById('orderTotal');
   if (!container || !totalEl) return;
 
   const items = allItemsById();
-  const entries = Object.entries(cart).filter(([, qty]) => qty > 0);
+  const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
 
   if (entries.length === 0) {
     container.innerHTML = '<p class="order-empty" id="orderEmpty">Aún no agregaste combos. Ve al menú y elige tus favoritos 🍗</p>';
   } else {
-    container.innerHTML = entries.map(([id, qty]) => {
+    container.innerHTML = entries.map(([id, entry]) => {
       const item = items[id];
       if (!item) return '';
+      const flavorLabel = entry.flavor || '<span style="color:var(--color-primary-light)">Falta elegir sabor</span>';
+      const modeLabel = isMenuItem(id) ? ` · ${entry.mode === 'aparte' ? 'Salsa aparte' : 'Bañado'}` : '';
       return `
         <div class="order-item">
           <div>
             <p class="order-item-name">${item.name}</p>
-            <p class="order-item-sub">${formatBs(item.price)} c/u</p>
+            <p class="order-item-sub">${flavorLabel}${modeLabel}</p>
           </div>
           <div class="order-item-right">
             <div class="qty-control" data-id="${id}" style="width:104px;">
               <button type="button" class="qty-btn" data-action="dec" aria-label="Quitar uno">–</button>
-              <span class="qty-value" data-qty-panel="${id}">${qty}</span>
+              <span class="qty-value" data-qty="${id}">${entry.qty}</span>
               <button type="button" class="qty-btn" data-action="inc" aria-label="Agregar uno">+</button>
             </div>
-            <span class="order-item-price">${formatBs(item.price * qty)}</span>
+            <span class="order-item-price">${formatBs(item.price * entry.qty)}</span>
           </div>
         </div>
       `;
@@ -1430,9 +1649,9 @@ function updateCartBadge() {
 
 function buildOrderMessage() {
   const items = allItemsById();
-  const entries = Object.entries(cart).filter(([, qty]) => qty > 0);
-  const flavorSelect = document.getElementById('flavorSelect');
-  const flavor = flavorSelect ? flavorSelect.value : '';
+  const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
+  const deliverySelect = document.getElementById('deliveryMode');
+  const delivery = deliverySelect ? deliverySelect.value : 'Para recoger en el local';
 
   let lines = [baseGreeting(), ''];
 
@@ -1440,17 +1659,17 @@ function buildOrderMessage() {
     lines.push('Quisiera más información sobre el menú.');
   } else {
     lines.push('Mi pedido:');
-    entries.forEach(([id, qty]) => {
+    entries.forEach(([id, entry]) => {
       const item = items[id];
-      if (item) lines.push(`• ${qty}x ${item.name} — ${formatBs(item.price * qty)}`);
+      if (!item) return;
+      const flavorTxt = entry.flavor ? ` — Sabor: ${entry.flavor}` : '';
+      const modeTxt = isMenuItem(id) ? ` (${entry.mode === 'aparte' ? 'salsa aparte' : 'bañado'})` : '';
+      lines.push(`• ${entry.qty}x ${item.name}${flavorTxt}${modeTxt} — ${formatBs(item.price * entry.qty)}`);
     });
     lines.push('');
-    lines.push(`Sabor: ${flavor}`);
+    lines.push(`Modalidad: ${delivery}`);
     lines.push(`Total: ${formatBs(cartTotal())}`);
   }
-
-  lines.push('');
-  lines.push(`Para: ${CONFIG.address}`);
 
   return lines.join('\n');
 }
@@ -1470,19 +1689,19 @@ function setSimpleWhatsappLinks() {
 }
 
 /* ==========================================================================
-   Panel deslizante de pedido (abrir / cerrar)
+   Panel deslizante de pedido
    ========================================================================== */
 function initOrderPanel() {
   const panel = document.getElementById('orderPanel');
   const backdrop = document.getElementById('orderBackdrop');
-  const openTriggers = [document.getElementById('floatingWhatsapp')];
+  const floatingBtn = document.getElementById('floatingWhatsapp');
   const closeBtn = document.getElementById('orderClose');
   const clearBtn = document.getElementById('orderClear');
-  const flavorSelect = document.getElementById('flavorSelect');
+  const deliverySelect = document.getElementById('deliveryMode');
+  const sendBtn = document.getElementById('orderSend');
+  const warning = document.getElementById('orderWarning');
 
   function openPanel(e) {
-    // Solo abrimos el panel si hay artículos en el carrito; si no, dejamos
-    // que el botón lleve directo a WhatsApp con el saludo simple.
     if (cartCount() === 0) return;
     e.preventDefault();
     panel.classList.add('is-open');
@@ -1498,7 +1717,7 @@ function initOrderPanel() {
     document.body.style.overflow = '';
   }
 
-  openTriggers.forEach((t) => t && t.addEventListener('click', openPanel));
+  floatingBtn && floatingBtn.addEventListener('click', openPanel);
   closeBtn && closeBtn.addEventListener('click', closePanel);
   backdrop && backdrop.addEventListener('click', closePanel);
   document.addEventListener('keydown', (e) => {
@@ -1510,12 +1729,12 @@ function initOrderPanel() {
     if (!btn) return;
     const wrap = btn.closest('.qty-control');
     const id = wrap.dataset.id;
-    const current = cart[id] || 0;
+    const entry = getEntry(id);
     if (btn.dataset.action === 'inc') {
-      cart[id] = Math.min(current + 1, 99);
+      entry.qty = Math.min(entry.qty + 1, 99);
     } else {
-      cart[id] = Math.max(current - 1, 0);
-      if (cart[id] === 0) delete cart[id];
+      entry.qty = Math.max(entry.qty - 1, 0);
+      if (entry.qty === 0) delete cart[id];
     }
     saveCart(cart);
     syncQtyDisplays();
@@ -1529,9 +1748,26 @@ function initOrderPanel() {
     syncQtyDisplays();
     renderOrderPanel();
     updateCartBadge();
+    warning && (warning.hidden = true);
   });
 
-  flavorSelect && flavorSelect.addEventListener('change', updateOrderLinks);
+  deliverySelect && deliverySelect.addEventListener('change', updateOrderLinks);
+
+  sendBtn && sendBtn.addEventListener('click', (e) => {
+    const { valid, missing } = cartValidation();
+    if (!valid) {
+      e.preventDefault();
+      warning.hidden = false;
+      warning.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      // Resalta los selects de sabor que faltan
+      missing.forEach(([id]) => {
+        const select = document.querySelector(`.flavor-select[data-flavor-for="${id}"]`);
+        if (select) select.classList.add('is-invalid');
+      });
+    } else {
+      warning.hidden = true;
+    }
+  });
 }
 
 /* ==========================================================================
@@ -1565,7 +1801,6 @@ function initNav() {
   backdrop && backdrop.addEventListener('click', closeNav);
   links.forEach((l) => l.addEventListener('click', closeNav));
 
-  // Header con fondo sólido al hacer scroll
   const header = document.getElementById('siteHeader');
   function onScroll() {
     if (window.scrollY > 12) header.classList.add('is-scrolled');
@@ -1574,7 +1809,6 @@ function initNav() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Resaltar enlace activo según sección visible
   const sections = document.querySelectorAll('main section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
   const spy = new IntersectionObserver((entries) => {
@@ -1613,9 +1847,6 @@ function initReveal() {
   });
 }
 
-/* ==========================================================================
-   Año dinámico en el footer
-   ========================================================================== */
 function initYear() {
   const el = document.getElementById('year');
   if (el) el.textContent = new Date().getFullYear();
