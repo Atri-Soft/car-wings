@@ -41,6 +41,9 @@
   --color-gold: #d4af37;
   --color-gold-light: #ecd27a;
 
+  --color-bbq: #a9542c;
+  --color-bbq-light: #c97a4d;
+
   --color-text: #f5f5f2;
   --color-text-muted: #a6a6ae;
   --color-text-faint: #6f6f78;
@@ -508,7 +511,7 @@ body {
   margin-bottom: var(--space-4);
 }
 .flavor-icon svg { width: 28px; height: 28px; }
-.flavor-icon--bbq { background: rgba(212,175,55,.14); color: var(--color-gold-light); }
+.flavor-icon--bbq { background: rgba(169,84,44,.16); color: var(--color-bbq-light); }
 .flavor-icon--honey { background: rgba(236,210,122,.16); color: #f0d98c; }
 .flavor-icon--spicy { background: rgba(208,31,43,.16); color: var(--color-primary-light); }
 .flavor-card h3 { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: .02em; margin-bottom: var(--space-2); }
@@ -575,6 +578,13 @@ body {
 }
 .menu-card-price span { font-family: var(--font-body); font-size: .85rem; color: var(--color-text-muted); font-weight: 600; }
 
+.menu-card-options {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
 .field-label {
   font-size: .7rem;
   text-transform: uppercase;
@@ -584,6 +594,7 @@ body {
   display: block;
   margin-bottom: 6px;
 }
+.field-label--spaced { margin-top: 10px; }
 
 .flavor-select {
   width: 100%;
@@ -863,6 +874,16 @@ body {
   font-size: .82rem;
 }
 
+.footer-credit {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-4);
+  text-align: center;
+  font-size: .78rem;
+  color: var(--color-text-faint);
+  letter-spacing: .04em;
+}
+.footer-credit strong { color: var(--color-gold-light); font-weight: 700; }
+
 /* ================= FLOATING WHATSAPP ================= */
 .floating-whatsapp {
   position: fixed;
@@ -1091,12 +1112,12 @@ body {
       </h1>
 
       <div class="hero-wings-deco reveal" aria-hidden="true">
-        <svg viewBox="0 0 48 30" class="wing wing-left"><path d="M46 4C36 2 26 4 20 12c6-2 12-2 16 2-6 0-11 2-14 6 5-.5 9 .5 11 4-8 1-15-1-19-7-2 6 0 11 5 14C9 29 2 22 1 13 0 5 8-1 18 1c9 2 20 1 28 3Z" fill="currentColor"/></svg>
-        <span class="hero-wings-slogan">— El Único Sabor —</span>
-        <svg viewBox="0 0 48 30" class="wing wing-right"><path d="M2 4C12 2 22 4 28 12c-6-2-12-2-16 2 6 0 11 2 14 6-5-.5-9 .5-11 4 8 1 15-1 19-7 2 6 0 11-5 14 9-2 16-9 17-18 1-8-7-14-17-12-9 2-20 1-28 3Z" fill="currentColor"/></svg>
+        <svg viewBox="0 0 60 36" class="wing wing-left"><path d="M4 18C13 12 24 9 56 3 34 11 22 15 15 18c7 3 19 7 41 15-32-6-43-9-52-15Z" fill="currentColor"/></svg>
+        <span class="hero-wings-slogan">El Único Sabor</span>
+        <svg viewBox="0 0 60 36" class="wing wing-right"><path d="M4 18C13 12 24 9 56 3 34 11 22 15 15 18c7 3 19 7 41 15-32-6-43-9-52-15Z" fill="currentColor"/></svg>
       </div>
 
-      <p class="hero-desc reveal">Alitas crujientes bañadas en <strong>Barbacoa</strong>, <strong>Miel y Mostaza</strong> o <strong>Picante</strong>. Directo a la parrilla, directo a tu mesa.</p>
+      <p class="hero-desc reveal">Alitas de pollo frito extra crujientes, bañadas en <strong>Barbacoa</strong>, <strong>Miel y Mostaza</strong> o <strong>Picante</strong>. Recién fritas, directo a tu mesa.</p>
 
       <div class="hero-actions reveal">
         <a href="#menu" class="btn btn-primary">
@@ -1134,14 +1155,14 @@ body {
           <svg viewBox="0 0 24 24"><path d="M8 21c-1-3 .5-5 2-6-1 2 0 3 1 3.5-.3-2 .5-3.5 2-4.5-.5 2 .5 3 1.5 3.5.8-1.5 0-3.5-1-5 2 .5 4 2.5 4.2 5.5.2 2-1.2 3.8-3.2 4-1.5.2-3-.3-4-1.5-1-1.2-1.7-2.5-2.5 1Z" fill="currentColor"/><path d="M6 21h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
         </div>
         <h3>Barbacoa</h3>
-        <p>Ahumada, intensa y con ese toque dulce de parrilla que se pega a la alita.</p>
+        <p>Ahumada e intensa, con ese toque dulce clásico que hace inconfundible a la barbacoa.</p>
       </div>
       <div class="flavor-card reveal">
         <div class="flavor-icon flavor-icon--honey" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M12 3c1.8 2.4 3 4.6 3 6.8a3 3 0 0 1-6 0C9 7.6 10.2 5.4 12 3Z" fill="currentColor"/><path d="M7 21c0-3 2-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M9 21h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </div>
         <h3>Miel y Mostaza</h3>
-        <p>Dulce y con un toque tangy que equilibra perfecto lo crocante del empanizado.</p>
+        <p>Dulce con un toque ácido que resalta perfecto lo crocante del empanizado.</p>
       </div>
       <div class="flavor-card reveal">
         <div class="flavor-icon flavor-icon--spicy" aria-hidden="true">
@@ -1178,7 +1199,7 @@ body {
       <div class="about-copy reveal">
         <p class="eyebrow">Nosotros</p>
         <h2 class="section-title section-title--left">El Único Sabor</h2>
-        <p>Car Wings es un restaurante de comida rápida en Quillacollo especializado en alitas de pollo. Combinamos velocidad de parrilla con el sabor de casa: crocantes por fuera, jugosas por dentro, bañadas en tres salsas que se pelean por ser tu favorita.</p>
+        <p>Car Wings es un restaurante de comida rápida en Quillacollo especializado en alitas de pollo frito extra crujientes. Doradas y crocantes por fuera, jugosas por dentro, bañadas en tres salsas que se pelean por ser tu favorita.</p>
         <p>Atendemos de <strong>lunes a sábado, de 16:00 a 22:00</strong>. Pedidos para recoger o coordinar entrega por WhatsApp.</p>
 
         <ul class="tag-list" aria-label="Etiquetas del restaurante">
@@ -1207,7 +1228,7 @@ body {
         <img class="about-logo" src="https://i.imgur.com/tzRZQLo.jpeg" alt="Logo de Car Wings">
         <div class="about-badge">
           <span class="about-badge-num">100%</span>
-          <span class="about-badge-label">Sabor a la parrilla</span>
+          <span class="about-badge-label">Pollo frito extra crocante</span>
         </div>
       </div>
     </div>
@@ -1308,6 +1329,10 @@ body {
     <p>© <span id="year"></span> Car Wings. Todos los derechos reservados.</p>
     <p>Hecho con orgullo en Quillacollo, Bolivia 🇧🇴</p>
   </div>
+
+  <div class="container footer-credit">
+    <p>Developed by <strong>AtriSoft</strong></p>
+  </div>
 </footer>
 
 <!-- ================= FLOATING WHATSAPP ================= -->
@@ -1333,8 +1358,8 @@ body {
     <div class="order-flavor">
       <label for="deliveryMode">Modalidad</label>
       <select id="deliveryMode">
-        <option value="Para recoger en el local">Para recoger en el local</option>
         <option value="A domicilio">A domicilio</option>
+        <option value="Para recoger en el local">Para recoger en el local</option>
       </select>
     </div>
     <div class="order-total">
@@ -1457,7 +1482,7 @@ function renderMenu() {
           ${flavorOptions(entry.flavor)}
         </select>
 
-        <label class="field-label">¿Cómo lo quieres?</label>
+        <label class="field-label field-label--spaced">¿Cómo lo quieres?</label>
         <div class="sauce-mode" data-sauce-for="${item.id}">
           <label class="check-pill ${entry.mode === 'bañado' ? 'is-active' : ''}" data-pill="bañado">
             <input type="checkbox" data-mode="bañado" ${entry.mode === 'bañado' ? 'checked' : ''}> Bañado
@@ -1651,7 +1676,7 @@ function buildOrderMessage() {
   const items = allItemsById();
   const entries = Object.entries(cart).filter(([, entry]) => entry.qty > 0);
   const deliverySelect = document.getElementById('deliveryMode');
-  const delivery = deliverySelect ? deliverySelect.value : 'Para recoger en el local';
+  const delivery = deliverySelect ? deliverySelect.value : 'A domicilio';
 
   let lines = [baseGreeting(), ''];
 
